@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let uebungsString = 'Hello World!';
+        //  H  e  l  l  o     W  o  r  l  d  !
+        // 0  1  2  3  4  5  6  7  8  9 10 11
+        /*
+        let teilstring = uebungsString.substr(2, 6);
+        console.log(teilstring);
+
+        // wenn zweiter Parameter fehlt, werden alle Zeichen bis zum Ende kopiert
+        teilstring = uebungsString.substr(2);
+        console.log(teilstring);
+
+        // Ein negativer erster Parameter zählt von hinten
+        teilstring = uebungsString.substr(-4);
+        console.log(teilstring);
+        */
+
+        // Der Index zeilt vor das Zeichen. Um also das fünfte Zeichen zu bekommen muss als Endindex der Index dahinter (5) angegeben werden
+        let teilstring = uebungsString.substr(2,5);
+        console.log(teilstring);
+        
+        teilstring = uebungsString.substring(2,5);
+        console.log(teilstring);
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

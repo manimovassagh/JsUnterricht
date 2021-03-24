@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let uebungsString = 'Die Sonne lacht und sie lacht uns an.';
+
+        // IndexOf liefert den Index, an dem der gesuchte Teilstring beginnt
+        let suchIndex = uebungsString.indexOf('lacht');
+        console.log(suchIndex);
+
+        // Der zweite Parameter gibt den Startindex an, ab dem der Teilstring gesucht werden soll
+        suchIndex = uebungsString.indexOf('lacht', 11);
+        console.log(suchIndex);
+
+        // Wenn ein Teilstring nicht gefunden wird, ist das Ergebnis -1
+        suchIndex = uebungsString.indexOf('Lacht');
+        console.log(suchIndex);
+
+        // Booleans
+        let gibtEs = uebungsString.includes('lacht')
+        console.log(gibtEs);
+
+        gibtEs = uebungsString.includes('Lacht')
+        console.log(gibtEs);
+        
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
