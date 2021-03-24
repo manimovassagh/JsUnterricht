@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        // Wenn nur ein Parameter gebraucht wird, kann dieser ohne Klammern stehen
+        const meineFunktion = x => {
+            x *= 2;
+            
+            // Return bricht die Ausführung der Funktion ab und liefert
+            // den definierten Wert an den Aufruf zurück
+            return x;
+
+            // Dieser Code kann nicht ausgeführt werden
+            console.log('Feierabend!');
+            
+        }
+
+        // Der Rückgabewert (return) ersetzt gewissermaßen den Funktionsaufruf
+        console.log(meineFunktion(12));
+        // console.log(24);
+
+        let ausgabe = meineFunktion(20);
+        // let ausgabe = 40;
+
+        ausgabe += meineFunktion(8);
+        // ausgabe += 16;
+
+        console.log(ausgabe);
+
+        meineFunktion(100);
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

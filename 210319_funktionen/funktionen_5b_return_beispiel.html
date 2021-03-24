@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        // Mehrere Parameter werden der Reihenfolge nach ausgelesen
+        const qm = (laenge, breite) => {
+            return (laenge * breite);
+        }
+
+        /* Gegenstück als klassische Funktion
+        function qm2(laenge, breite){
+            return (laenge * breite);
+        }
+        */
+
+        // 3 Zimmer mit folgenden Maßen
+        // 4 * 3
+        // 6 * 4
+        // 2 * 3 
+        let gesamtQm = qm(4, 3) + qm(6, 4) + qm(2, 3);
+        // let gesamtQm = qm(4, 3) + qm(6, 4) + qm(2, 3);
+        // let gesamtQm = 12 + qm(6, 4) + qm(2, 3);
+        // let gesamtQm = 12 + 24 + qm(2, 3);
+        // let gesamtQm = 12 + 24 + 6;
+        // let gesamtQm = 42;
+
+        console.log(gesamtQm + 'qm');
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
