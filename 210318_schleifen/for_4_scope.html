@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        // Alle Variablen existieren nur in den sie umgebenden {} 
+        // {} ist der Scope bzw. Sichtbarkeitsbereich
+        for (let i = 1; i <= 10; i++) {
+            // Zahl existiert nur innerhalb des Schleifenkörper
+            let zahl = 100;
+            console.log(zahl);
+            console.log('inner ', i);
+        }
+        //console.log('outer ', i);
+        console.log(zahl);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

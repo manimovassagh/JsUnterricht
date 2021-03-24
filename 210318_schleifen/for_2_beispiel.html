@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        // Herausfinden, ob der String eine Zahl enthält
+        let eingabe = prompt('Ihre Eingabe');
+        let hasZahl = false;
+
+        for (let i = 0; i < eingabe.length; i++) {
+            //console.log(eingabe[i]);
+            
+            if (!isNaN(eingabe[i])) {
+                hasZahl = true;
+            }
+        } 
+
+        console.log(hasZahl);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
