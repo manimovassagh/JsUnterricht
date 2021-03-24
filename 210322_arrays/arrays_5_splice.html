@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let anzahl = 15;
+        let meinArray = [];
+
+        for (let i = 0; i < anzahl; i++) {
+            // Erinnerung: ~~ entfernt die Nachkommastellen
+            meinArray.push(~~(Math.random() * 100));
+        }
+
+        console.log(meinArray.join(' '));
+
+        /* den Index 3 entfernen
+        meinArray.splice(3, 1);
+        console.log(meinArray.join(' '));
+        */
+
+        /* 4 Elemente ab Index 3 entfernen
+        meinArray.splice(3, 4);
+        console.log(meinArray.join(' '));
+        */
+
+        /* Neue Werte ab Index 3 einfügen
+        meinArray.splice(3, 0, 1, 2, 3);
+        console.log(meinArray.join(' '));
+        */
+        
+        // Werte ab Index 3 ersetzen
+        // Parameter: Anfangsindex, Anzahl der zu löschenden, beliebig viele neue Werte
+        meinArray.splice(3, 3, 1, 2, 3);
+        console.log(meinArray.join(' '));
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let anzahl = 7;
+        let meinArray = [];
+
+        for (let i = 0; i < anzahl; i++) {
+            meinArray.push(~~(Math.random() * 100));
+        }
+
+        console.log(meinArray.join(' '));
+
+        meinArray.forEach(el => {
+            console.log(el);
+        })
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

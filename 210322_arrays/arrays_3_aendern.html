@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meinArray = [21, 32, 15];
+
+        // Die Ausgabe eines Array erfolgt asynchron. 
+        // D.h. wenn direkt nach der Ausgabe das Array verändert wird, dann 
+        // wird u.U. ein falscher Inhalt dargestellt
+        // console.log(meinArray);
+
+        // join wandelt das Array in einen String um
+        console.log(meinArray.join(' - '));
+
+        meinArray[1] = 100;
+        
+        console.log(meinArray.join(', '));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
