@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        .rot {
+            color: rgb(119, 22, 22);
+            background-color: rgb(221, 161, 161);
+        }
+        h1 {
+            font-weight: normal;
+        }
+    </style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener('DOMContentLoaded', () => {
+
+            let h1 = document.querySelector('h1');
+            console.log( h1.innerHTML );
+            console.log( h1.innerText );
+
+            let ersteSection = document.querySelector('.ersteSection');
+            console.log(ersteSection.innerHTML);
+            console.log(ersteSection.innerText);
+
+            // HTML-Code wird interpretiert
+            h1.innerHTML = 'Neue <b>tolle</b> Überschrift';
+
+            // HTML-Code wird als Text dargestellt
+            // h1.innerText = 'Neue <b>tolle</b> Überschrift';
+            
+        })
+
+
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <h1 id="header1">
+            Das ist meine Dummy-Seite
+        </h1>
+    </header>
+
+    <main>
+        <section class="ersteSection">
+            <h3>Die erste Section</h3>
+            <p>
+                Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der
+                Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel?
+            </p>
+            <p>
+                Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte
+                einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die
+                Früchte seiner Arbeit zu erleichtern?
+            </p>
+            <p>
+                Oder gehörten die Schritte hinter ihm zu einem der unzähligen Gesetzeshüter dieser Stadt, und die
+                stählerne Acht um seine Handgelenke würde gleich zuschnappen? Er konnte die Aufforderung stehen zu
+                bleiben schon hören. Gehetzt sah er sich um.
+            </p>
+        </section>
+
+        <section class="zweiteSection">
+            <h3>Die zweite Section</h3>
+            <div class="abc">
+                Er versuchte, sich in der Dunkelheit seinen Weg zu ertasten und erstarrte
+                <p>
+                    Hier ist auch Text
+                </p>
+            </div>
+            <div class="def">
+                Fieberhaft irrten seine Augen durch die nächtliche Dunkelheit und suchten einen Ausweg
+            </div>
+            <div class="abc">
+                Langsam bewegte er sich auf die offene Tür zu, immer dicht an die Mauer gepresst
+            </div>
+            <div class="abc">
+                Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
