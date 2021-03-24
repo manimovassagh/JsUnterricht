@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        // Rückgaben eines Prompt sind immer Strings
+        // Daher empfiehlt sich eine Typkonvertierung zu Number, wenn mit der Eingabe gerechnet werden soll
+        let eingabe = prompt('Bitte machen Sie Ihre Eingabe:');
+
+        // Wenn eingabe true ist, wird der Code ausgeführt
+        // Da die if-Anweisung ein Boolean braucht, wird die Eingabe laut
+        // Umwandlungstabelle https://www.jsreferenz.de/umwandlungstabelle interpretiert
+        if ( eingabe ) {
+            eingabe = Number(eingabe);
+            console.log(eingabe + 10);            
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

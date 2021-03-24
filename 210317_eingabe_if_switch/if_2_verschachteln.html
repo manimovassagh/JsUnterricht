@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let eingabe = prompt('Bitte machen Sie Ihre Eingabe:');
+
+        if (eingabe) {
+            // isNaN liefert true, wenn der Wert KEINE Zahl ist
+            // Das ! dreht die logische Aussage um.
+            // D.h., wenn es eine Zahl ist, wird der Code ausgeführt
+            if (!isNaN(eingabe)) {
+                eingabe = Number(eingabe);
+                console.log(eingabe + 10);
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
