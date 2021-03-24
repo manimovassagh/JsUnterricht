@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let s = '123';
+        // s = 'abc';
+
+        // Die Addition ist zweideutig
+        // Es wird nur dann mathematisch addiert, wenn beide Operanden vom Datentyp number sind
+        // Ansonsten wird konkatiniert (Die Strings werden aneinander gehängt)
+        console.log(s + 12);
+        console.log(Number(s) + 12);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
