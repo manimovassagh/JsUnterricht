@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            let btn = document.querySelector('#btn');
+            let btnLesen = document.querySelector('#btnLesen');
+
+            btn.addEventListener('click', () => {
+                localStorage.setItem('meinItem', ~~(Math.random() * 1000));
+                localStorage.setItem('anderes', ~~(Math.random() * 1000));
+                localStorage.setItem('abc', 'Die Katze liegt im Schnee');
+            })
+
+            btnLesen.addEventListener('click', () => {
+                // Alle Items aus dem localStorage lesen                
+                for (let i = 0; i < localStorage.length; i++) {
+                    let key = localStorage.key(i);
+                    console.log(key, localStorage.getItem(key));
+                }
+            })
+        });
+
+    </script>
+</head>
+
+<body>
+    <button id="btn">
+        Storage setzen
+    </button>
+
+    <button id="btnLesen">
+        Storage lesen
+    </button>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        div {
+            padding: 10px;
+            background: #aaa;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .contextmenu {
+            position: absolute;
+            border: 1px solid #888;
+            background: #ccc;
+            padding: 5px;
+        }
+
+        p {
+            background: rgba(255, 255, 255, .2);
+        }
+    </style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+            let inputEingabe1 = document.querySelector('#eingabe1');
+            let ta = document.querySelector('#ta');
+            let slct = document.querySelector('#slct');
+
+            const eingabeVerarbeiten = evt => {
+                console.log(evt.target.value);
+            }
+            const selectVerarbeiten = evt => {
+                console.log(evt.target.value);
+                // console.log(evt.target.selectedIndex);
+                console.log(evt.target.children[evt.target.selectedIndex].innerHTML);
+            }
+
+            /* Change feuert, wenn sich der Inhalt verändert hat und
+            // die Enter-Taste gedrückt wird btw das Element den Fokus verliert
+            inputEingabe1.addEventListener('change', eingabeVerarbeiten);
+            ta.addEventListener('change', eingabeVerarbeiten);
+            */
+            
+            inputEingabe1.addEventListener('input', eingabeVerarbeiten);
+            ta.addEventListener('input', eingabeVerarbeiten);
+            slct.addEventListener('change', selectVerarbeiten);
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div id="eingabe">
+        <input type="text" id="eingabe1" placeholder="Mein Text" value="Standardinhalt" />
+        <br />
+        <textarea id="ta">Standardtext</textarea>
+        <br />
+        <select id="slct">
+            <option value="0">Apfel</option>
+            <option value="1">Birne</option>
+            <option value="2">Kirsche</option>
+            <option value="3">Erdbeere</option>
+        </select>
+    </div>
+
+    <div id="ausgabe"></div>
+
+</body>
+
+</html>

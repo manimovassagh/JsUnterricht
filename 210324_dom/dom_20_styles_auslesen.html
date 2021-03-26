@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        .inhalt {
+            background: #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #000;
+        }
+    </style>
+
+    <script>
+        'use strict';
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            const ausgabe = document.querySelector('#ausgabe');
+
+            const neu = document.createElement('div');
+            neu.className = 'inhalt';
+            neu.innerHTML = 'Mein Element';
+            ausgabe.append(neu);
+
+            let style = window.getComputedStyle(neu);
+            console.log(style);
+            console.log(style.backgroundColor);
+            console.log(style.marginBottom);
+            console.log(style.padding);
+            
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="ausgabe"></div>
+
+</body>
+
+</html>

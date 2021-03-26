@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        .container {
+            background: #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <script>
+        'use strict';
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            const ausgabe = document.querySelector('#ausgabe');
+
+            const container = document.createElement('div');
+            container.classList.add('container');
+            ausgabe.append(container);
+
+            const p1 = document.createElement('p');
+            p1.innerHTML = 'Dies ist irgend ein Text';
+            container.append(p1);
+
+            /* Alternative 1
+            p1.setAttribute('data-index', 12);
+            p1.setAttribute('data-autor', 'C. Heisch');
+            */
+
+            // Alternative 2
+            p1.dataset.datum = '24.03.2021';
+
+            console.log(p1.getAttribute('data-datum'));
+            console.log(p1.dataset.datum);
+
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="ausgabe"></div>
+
+</body>
+
+</html>

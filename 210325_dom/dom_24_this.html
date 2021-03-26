@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        div {
+            position: relative;
+            padding: 10px;
+            background: #aaa;
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        p {
+            background: rgba(255, 255, 255, .2);
+        }
+    </style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            let el1 = document.querySelector('#element1');
+            let el2 = document.querySelector('#element2');
+
+            function callMe(){
+                // Veraltet! This bezieht sich auf das Element, das den Eventlistener trägt
+                console.log(this);
+            }
+
+            // Feuert nicht, wenn auf ein Kind-Element bewegt wurde
+            el1.addEventListener('click', callMe);
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="element1">
+        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+        sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies
+        nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel,
+        aliquet nec, vulputate eget, arcu.
+        <p>
+            Ich bin ein eKind von Element 1
+        </p>
+    </div>
+    <div id="element2">
+        In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
+        Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo
+        ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat
+        a, tellus.
+        <p>
+            Ich bin ein eKind von Element 2
+        </p>
+    </div>
+
+</body>
+
+</html>

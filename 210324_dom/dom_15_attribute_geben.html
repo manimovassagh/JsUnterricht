@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        .container {
+            background: #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <script>
+        'use strict';
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            const ausgabe = document.querySelector('#ausgabe');
+
+            const container = document.createElement('div');
+            container.classList.add('container');
+            ausgabe.append(container);
+
+            const header = document.createElement('h3');
+            header.innerHTML = 'Überschrift';
+            container.append(header);
+
+            const p1 = document.createElement('p');
+            p1.innerHTML = 'Dies ist irgend ein Text';
+            container.append(p1);
+
+            // p1.setAttribute('id', 'meinText');
+            p1.id = 'deintext';
+
+            const link = document.createElement('a');
+            container.append(link);
+            link.innerHTML = 'Hier gehts zu Google';
+
+            // link.setAttribute('href', 'http://www.google.de');
+            // link.setAttribute('target', '_blank');
+            link.href = 'http://www.google.de';
+            link.target = '_blank';
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="ausgabe"></div>
+
+</body>
+
+</html>

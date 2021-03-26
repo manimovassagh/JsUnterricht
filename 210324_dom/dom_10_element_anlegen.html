@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Titel</title>
+        <style></style>
+        
+        <script>
+            'use strict';
+            document.addEventListener("DOMContentLoaded", evt => {
+            
+                const ausgabe = document.querySelector('#ausgabe');
+
+                // Neues Element anlegen und in Variable ablegen
+                let neu = document.createElement('div');
+                // Element an bestehendes Element anhängen (mounten)
+                ausgabe.append(neu);
+                // Element mit Inhalt füllen
+                neu.innerHTML = 'Mein <b>neues</b> DOM-Element.';
+                neu.className = 'text inhalt';
+                neu.style.backgroundColor='#abc';
+
+            });
+        </script>
+    </head>
+    <body>
+        
+        <div id="ausgabe"></div>
+
+    </body>
+</html>

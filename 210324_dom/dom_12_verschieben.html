@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Titel</title>
+        <style>
+            .container {
+                background: #ddd;
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+        </style>
+        
+        <script>
+            'use strict';
+            document.addEventListener("DOMContentLoaded", evt => {
+            
+                const ausgabe = document.querySelector('#ausgabe');
+
+                const container = document.createElement('div');
+                container.classList.add('container');
+                ausgabe.append(container);
+
+                const header = document.createElement('h3');
+                header.innerHTML = 'Überschrift';
+                container.append(header);
+
+                const p1 = document.createElement('p');
+                p1.innerHTML = 'Dies ist irgend ein Text';
+                container.append(p1);
+
+                const p2 = document.createElement('p');
+                p2.innerHTML = 'Dies ist noch ein Text';
+                container.append(p2);
+
+                // Zweiter Container
+                const container2 = document.createElement('div');
+                container2.classList.add('container');
+                ausgabe.append(container2);
+
+                // Einen DOM-Container verschieben
+                container2.append(p2);
+
+            });
+        </script>
+    </head>
+    <body>
+        
+        <div id="ausgabe"></div>
+
+    </body>
+</html>
