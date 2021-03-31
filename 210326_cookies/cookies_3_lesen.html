@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+            // DOM-Elemente
+            let btn = document.querySelector('#btn');
+
+            // FUNKTIONEN
+            const cookieLesen = () => {
+                let cookie = document.cookie;
+                cookie = cookie.split('; ');
+                let cookieObj = {};
+                for (let eintrag of cookie) {
+                    eintrag = eintrag.split('=');
+                    cookieObj[eintrag[0]] = eintrag[1];
+                }
+                return cookieObj;
+            }
+
+            // EVEMTLISTENER
+            btn.addEventListener('click', () => {
+                let cookies = cookieLesen();
+                console.log(cookies.meinCookie);
+            })
+        });
+
+    </script>
+</head>
+
+<body>
+    <button id="btn">
+        Cookie auslesen
+    </button>
+</body>
+
+</html>

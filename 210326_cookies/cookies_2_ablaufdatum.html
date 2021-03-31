@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+            let btn = document.querySelector('#btn');
+            btn.addEventListener('click', () => {
+                /*
+                // Date-Objekt mit spezifischem Datum anlegen
+                let jetzt = new Date(2021, 2, 26, 15);
+                */
+                let ablauf = new Date();
+                let stunden = ablauf.getHours() + 2;
+                ablauf.setHours(stunden);
+
+                document.cookie = `meinCookie=Hallo Welt;expires=${ablauf}`;
+                document.cookie = `andererCookie=987464;expires=${ablauf}`;
+            })
+        });
+
+    </script>
+</head>
+
+<body>
+    <button id="btn">
+        Cookie anlegen
+    </button>
+</body>
+
+</html>
