@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+        
+        document.addEventListener("DOMContentLoaded", evt => {
+        
+            const bilder = Array.from(document.querySelectorAll('img'));
+
+            const bildNichtGeladen = evt => {
+                console.warn(`${evt.target.src} konnte nicht geladen werden.`);
+                // evt.target.remove();
+                evt.target.src = 'https://freefrontend.com/assets/img/html-funny-404-pages/CodePen-404-Page.png';
+            }
+
+            for ( let bild of bilder){
+                bild.addEventListener('error', bildNichtGeladen);
+            }
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="bilder">
+        <img src="bilder/tier1.jpg" width="200" /> 
+        <img src="bilder/loewe.jpg"  width="200" /> 
+    </div>
+</body>
+
+</html>

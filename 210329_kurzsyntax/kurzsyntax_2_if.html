@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        const zahlErzeugen = () => ~~(Math.random() * 100);
+
+        let zahl = zahlErzeugen();
+
+        // Wenn der Code aus nur einem Befehl besteht, können die {} weggelassen werden
+        if (zahl < 30) console.log(`${zahl} ist klein.`);
+        else if (zahl < 60) console.log(`${zahl} ist mittel.`);
+        else console.log(`${zahl} ist groß.`);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

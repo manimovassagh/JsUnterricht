@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let zuege = [];
+        let anzahl = 10;
+
+        const werfe = () => ~~(Math.random() * 6 + 1);
+
+
+        while (zuege.length < anzahl) {
+            let wurf = werfe();
+            zuege.push(wurf);
+            // Break bricht die Ausführung der Schleife ab
+            if (wurf == 6) break;
+        }
+
+        console.log(zuege);
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

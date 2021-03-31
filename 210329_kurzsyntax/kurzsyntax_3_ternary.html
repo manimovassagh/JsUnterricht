@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        const zahlErzeugen = () => ~~(Math.random() * 100);
+
+        let zahl = zahlErzeugen();
+
+        // ternary, dt. ternäre Operation
+        // (log. Aussage) ? (return wenn wahr) : (return wenn falsch)
+        let ausgabe = zahl < 50 ? 'kleiner' : 'größer';
+        console.log( `${zahl} ist ${ausgabe} als 50` );
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

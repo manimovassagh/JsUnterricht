@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let zuege = [];
+        let anzahl = 10;
+
+        const werfe = () => ~~(Math.random() * 6 + 1);
+
+
+        while (zuege.length < anzahl) {
+            let wurf = werfe();
+            // Continue überspringt die weitere Ausführung des Codeblocks
+            // und springt direkt zur nächsten 
+            if (wurf == 6) continue;
+            zuege.push(wurf);
+        }
+
+        console.log(zuege);
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
