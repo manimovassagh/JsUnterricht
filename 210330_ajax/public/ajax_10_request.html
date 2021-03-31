@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meinRequest = new Request('/multiply', {
+            method: 'post',  // REST-Methode
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ x: 12, y: 23 })
+        });
+
+        fetch(meinRequest).then(
+            data => data.text()
+        ).then(
+            data => console.log(data)
+        ).catch(
+            err => console.log(err)
+        )
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

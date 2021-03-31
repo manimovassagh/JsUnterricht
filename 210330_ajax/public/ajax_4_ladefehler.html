@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        const datenVerarbeiten = data => {
+            data = JSON.parse(data);
+            console.log(data);
+        }
+
+        const fehlerVerarbeiten = data => {
+            console.log(data);
+        }
+
+
+        fetch('data.json').then(
+            data => {
+                // Wenn alles ok (200), dann starte das nächste then
+                if (data.status == 200) return data.json()
+                // Sonst starte catch und übergibt den Statustext
+                else throw data.statusText;
+            }
+        ).then(
+            data => console.log(data)
+        ).catch(
+            err => console.log(err)
+        )
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

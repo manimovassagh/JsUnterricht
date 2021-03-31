@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+
+            const datenVerarbeiten = data => {
+                // XML-String in DOM-Daten konvertieren
+                let parser = new DOMParser();
+                data = parser.parseFromString(data, 'text/xml');
+
+                let allePflanzen = Array.from(data.querySelectorAll('PLANT'));
+                for (let plant of allePflanzen) {
+                    let neu = document.createElement('h3');
+                    neu.innerHTML = plant.querySelector('COMMON').innerHTML;
+                    document.body.append(neu);
+                }
+            }
+
+            const fehlerVerarbeiten = data => {
+                console.log(data);
+            }
+
+
+            fetch('data.XML').then(
+                data => data.text()
+            ).then(
+                data => datenVerarbeiten(data)
+            ).catch(
+                err => console.log(err)
+            )
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

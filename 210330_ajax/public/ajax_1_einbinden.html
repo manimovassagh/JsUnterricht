@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        const datenVerarbeiten = data => {
+            data = JSON.parse(data);
+            console.log(data);
+        }
+
+        // Datei mit dem klassischen Weg (XMLHttpRequest) laden
+        // Ajax-Objekt anlegen, das alle Informationen enthält
+        const xhr = new XMLHttpRequest();
+        
+        // Ajax-Objekt mit den relevanten Infos füttern
+        // ReST-Methode, URL, asynchron
+        xhr.open('get', 'data.json', true);
+
+        // Eventlistener, der darauf reagiert, dass die Datei geladen wurde
+        xhr.addEventListener('load', () => {
+            datenVerarbeiten(xhr.responseText)
+        });
+
+        // Start des Lade-Prozesses
+        xhr.send();
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
