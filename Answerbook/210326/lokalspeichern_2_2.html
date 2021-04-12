@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            // VARIABLE
+            const taEingabe = document.querySelector('#taEingabe');
+            const btnRemove = document.querySelector('#btnRemove');
+
+            // FUNKTIONEN
+            const eingabeSpeichern = () => {
+                localStorage.setItem('eingabe', taEingabe.value);
+            }
+            const eingabeEntfernen = () => {
+                localStorage.removeItem('eingabe');
+            }
+
+            // EVENTLISTENER
+            taEingabe.addEventListener('change', eingabeSpeichern);
+            btnRemove.addEventListener('click', eingabeEntfernen);
+
+            // Letzte Eingabe zurückschreiben
+            let letzteEingabe = localStorage.getItem('eingabe');
+            if (letzteEingabe) {
+                taEingabe.value = letzteEingabe;
+            }
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div id="eingabe">
+        <textarea id="taEingabe"></textarea>
+        <br /> 
+        <button id="btnRemove">Gespeicherte Eingabe entfernen</button>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            let meinArray = [87,98,65,45,21,32,65,98];
+            let meinAuto = {
+                marke: 'Hyundai',
+                modell: 'i30',
+                baujahr: 2016
+            };
+
+            console.log( meinArray );
+            console.log( JSON.stringify(meinArray) );
+            console.log( JSON.stringify(meinAuto) );
+
+            let meinString = '{"marke": "VW", "modell": "Polo", "baujahr": 1985}';
+            meinAuto = JSON.parse(meinString);
+            console.log( meinAuto );
+            
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div id="eingabe">
+        <textarea id="taEingabe"></textarea>
+        <br />
+        <button id="btnRemove">Gespeicherte Eingabe entfernen</button>
+    </div>
+
+</body>
+
+</html>

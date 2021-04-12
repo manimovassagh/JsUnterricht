@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            // VARIABLE
+            const taEingabe = document.querySelector('#taEingabe');
+            const btnRemove = document.querySelector('#btnRemove');
+
+            // FUNKTIONEN
+            const eingabeSpeichern = () => {
+                if (!localStorage.getItem('eingaben')) {
+                    localStorage.setItem('eingaben', '[]');
+                }
+                // Daten aus dem LocalStorage lesen
+                let letzteEingaben = JSON.parse(localStorage.getItem('eingaben'));
+                // Neuen Eintrag in die Daten schreiben
+                letzteEingaben.push(taEingabe.value);
+                // Liste der Einträge ins localStorage schreiben
+                localStorage.setItem('eingaben', JSON.stringify(letzteEingaben));
+            }
+            const eingabeEntfernen = () => {
+                localStorage.removeItem('eingaben');
+            }
+
+            // EVENTLISTENER
+            taEingabe.addEventListener('change', eingabeSpeichern);
+            btnRemove.addEventListener('click', eingabeEntfernen);
+
+            // Letzte Eingabe ins textarea schreiben
+            let letzteEingaben = JSON.parse(localStorage.getItem('eingaben'));
+            if (letzteEingaben) {
+                taEingabe.value = letzteEingaben[letzteEingaben.length-1];
+            }
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div id="eingabe">
+        <textarea id="taEingabe"></textarea>
+        <br />
+        <button id="btnRemove">Gespeicherte Eingabe entfernen</button>
+    </div>
+
+</body>
+
+</html>

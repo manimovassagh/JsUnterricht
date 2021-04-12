@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            // FUNKTIONEN
+            const ausgeben = inhalt => {
+                let neu = document.createElement('div');
+                neu.classList.add('ausgabe');
+                neu.innerHTML = inhalt;
+                document.body.append(neu);
+                return neu;
+            }
+
+            if (localStorage.getItem('letzteAnmeldung')) {
+                let letzteAnmeldung = Number(localStorage.getItem('letzteAnmeldung'));
+                letzteAnmeldung = new Date(letzteAnmeldung);
+                ausgeben(`Letzte Anmeldung: ${letzteAnmeldung.toLocaleString()}`);
+            } else {
+                ausgeben(`Dies ist der erste Besuch.`);
+            }
+
+            let now = new Date();
+            // timestamp
+            let timestamp = now.getTime();
+            localStorage.setItem('letzteAnmeldung', JSON.stringify(timestamp));
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            // FUNKTIONEN
+            // Funktion, um den Cookie auszulesen und als Objekt zurückzugeben
+            const readCookie = () => {
+                let c = document.cookie.split('; ');
+                let cObject = {};
+                for (let eintrag of c) {
+                    eintrag = eintrag.split('=');
+                    cObject[eintrag[0]] = eintrag[1];
+                }
+                return cObject;
+            }
+
+            const ausgeben = inhalt => {
+                let neu = document.createElement('div');
+                neu.classList.add('ausgabe');
+                neu.innerHTML = inhalt;
+                document.body.append(neu);
+                return neu;
+            }
+
+            let cookie = readCookie();
+            let letzteAnmeldung = Number(cookie.letzteAnmeldung);
+            letzteAnmeldung = new Date(letzteAnmeldung);
+
+            ausgeben(`Letzte Anmeldung: ${letzteAnmeldung.toLocaleString()}`);
+
+
+
+            let now = new Date();
+            // timestamp
+            let timestamp = now.getTime();
+            document.cookie = `letzteAnmeldung=${timestamp}; sameSite=strict`;
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

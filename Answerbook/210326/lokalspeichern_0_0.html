@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Titel</title>
+        <style></style>
+        
+        <script>
+            'use strict';
+
+            document.addEventListener("DOMContentLoaded", evt => {
+            
+                let now = new Date();
+                // console.log(now);
+
+                // timestamp
+                let timestamp = now.getTime();
+                document.cookie = `letzteAnmeldung=${timestamp}`;
+                
+
+                /* Als JSON-Objekt
+                let nowObject = {
+                    year: now.getFullYear(),
+                    month: now.getMonth(),
+                    day: now.getDate(),
+                    hours: now.getHours(),
+                    minutes: now.getMinutes()
+                }
+
+                document.cookie = `letzteAnmeldung=${JSON.stringify(nowObject)}`;
+                */
+
+            });
+
+        </script>
+    </head>
+    <body>
+    
+    </body>
+</html>

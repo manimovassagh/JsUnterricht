@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            // VARIABLE
+            const taEingabe = document.querySelector('#taEingabe');
+
+            // FUNKTIONEN
+            const eingabeSpeichern = () => {
+                localStorage.setItem('eingabe', taEingabe.value);
+            }
+
+            // EVENTLISTENER
+            taEingabe.addEventListener('change', eingabeSpeichern);
+
+            // Letzte Eingabe zurückschreiben
+            let letzteEingabe = localStorage.getItem('eingabe');
+            if (letzteEingabe) {
+                taEingabe.value = letzteEingabe;
+            }
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div id="eingabe">
+        <textarea id="taEingabe"></textarea>
+    </div>
+
+</body>
+
+</html>
