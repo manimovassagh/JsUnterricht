@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let zufall = Math.floor(Math.random() * 1000 + 1);
+        let schritte = 1;
+        console.log(zufall);
+
+        let geraten = prompt('Welches ist die Zahl');
+
+        /* Alternative 1: Abbruch per break
+        while (zufall != geraten) {
+            if (geraten === null) {
+                break;
+            }
+            schritte++;
+            if (geraten < zufall) {
+                geraten = prompt(`${geraten} war zu niedrig:`)
+            } else {
+                geraten = prompt(`${geraten} war zu hoch:`)
+            }
+        }
+        */       
+        
+        // Alternative 2: Abbruch per Logik
+        while ((zufall != geraten) && (geraten !== null)) {
+            schritte++;
+            if (geraten < zufall) {
+                geraten = prompt(`${geraten} war zu niedrig:`)
+            } else {
+                geraten = prompt(`${geraten} war zu hoch:`)
+            }
+        }
+
+        let ausgabe = '';
+        if (geraten === null) {
+            ausgabe = `Abgebrochen!\n`;
+        } else {
+            ausgabe = `Glückwunsch\n`;
+            ausgabe += `${geraten} war die richtige Zahl.\n\n`;
+            if (schritte == 1) {
+                ausgabe += `Sie haben einen Schritt benötigt.`;
+            } else {
+                ausgabe += `Sie haben ${schritte} Schritte benötigt.`;
+            }
+        }
+        alert(ausgabe);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

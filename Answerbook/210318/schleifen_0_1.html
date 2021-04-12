@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meinString = 'Jemand musste Josef K. verleumdet haben.';
+        let jedesZweiteZeichen = '';
+
+        // Alternative 1: Standard-Weg
+        for (let i = 1; i < meinString.length; i += 2) {
+            jedesZweiteZeichen += meinString.substr(i, 1);
+        }
+        
+        /* Alternative 2: Freaky und Vorgriff auf noch nicht behandelte Themen
+        jedesZweiteZeichen = meinString.split('').filter((el, i) => i % 2).join('');
+        */
+
+        console.log(jedesZweiteZeichen);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

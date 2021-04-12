@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meinString = 'Jemand musste Josef K. verleumdet haben.';
+
+        /* Alternative 1: while
+        let i = 1;
+        while (i < meinString.length) {
+            let teilstring = meinString.substr(i, 1);
+            console.log(teilstring);
+            i += 2;
+            // i = i + 2;
+        }
+        */
+
+        // Alternative 2: for
+        for (let i = 1; i < meinString.length; i += 2) {
+            let teilstring = meinString.substr(i, 1);
+            console.log(teilstring);
+        }
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
