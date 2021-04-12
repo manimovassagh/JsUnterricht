@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        /*
+        Erzeuge ein Array für Lottozahlen.
+        D.h. Speichere in diesem Array sechs Zufallszahlen von 1 bis 49 und stelle dabei sicher, dass keine der Zahlen doppelt vorkommt.
+        */
+
+        let anzahl = 6;
+        let min = 1;
+        let max = 49;
+        let lotto = [];
+
+        // Erzeugen einer zufälligen Zahl
+        const erzeugeZufall = (min, max) => ~~(Math.random() * (max - min + 1) + min);
+
+        /* Alternative 1: Einfache Schleife
+        while (lotto.length < anzahl) {
+            // Zufällige Zahl in Variable ablegen
+            let zufall = erzeugeZufall(min, max);
+
+            // -1 bedeutet, dass der Wert um Array nicht gefunden wurde
+            // console.log(zufall, lotto.indexOf(zufall));
+            
+            // if (lotto.indexOf(zufall) == -1) {
+            if (!lotto.includes(zufall)) {
+                lotto.push(zufall);
+            }
+        }
+        */
+
+        // Alternative 2: Ziehen ohne Zurücklegen
+        let stapel = [];
+        for (let i = min; i <= max; i++) {
+            stapel.push(i);
+        }
+        // console.log(stapel);
+
+        while (lotto.length < anzahl) {
+            let zufall = erzeugeZufall(0, stapel.length - 1);
+            // splice zieht eine Zahl aus dem Stapel
+            // splice hat einen Array als Rückgabewert.
+            // Daher wird der Wert mit [0] herauskopiert.
+            lotto.push(stapel.splice(zufall, 1)[0]);
+        }
+
+        lotto.sort((a, b) => a - b);
+        console.log(lotto.join(' '));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

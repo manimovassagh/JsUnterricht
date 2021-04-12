@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let counter = 0;
+
+        /*
+        const callMe = () => {
+            counter++;
+            console.log(`Die Funktion wurde ${counter} mal aufgerufen.`);
+        }
+        */
+
+        // Kompakter
+        // ist das ++ vor der Variablen, dann wird die Variable erst inkrementiert, dann zurückgegeben
+        // ist das ++ hinter der Variablen, dann wird die Variable erst zurückgegeben, dann inkrementiert
+        const callMe = () => {
+            console.log(`Die Funktion wurde ${++counter} mal aufgerufen.`);
+        }
+
+        for (let i = 0; i < 5; i++) {
+            callMe();
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

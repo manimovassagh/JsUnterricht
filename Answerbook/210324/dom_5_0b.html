@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        #ausgabe,
+        #content {
+            border: 1px solid #aaa;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .zahl {
+            background: rgb(240, 240, 240);
+            padding: 3px;
+            margin: 2px;
+            border: 1px solid hsla(0, 0%, 0%, .3);
+        }
+
+        .rot {
+            background: rgb(105, 17, 17);
+            color: #fff;
+        }
+    </style>
+
+    <script>
+        'use strict';
+
+        /*
+        Lege einen Button an.
+        Wenn der Button gedrückt wird, soll ein neues DOM-Element angelegt werden.
+        */
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            // VARIABLEN
+            const ausgabe = document.querySelector('#ausgabe');
+
+            // FUNKTIONEN
+            const create = () => {
+                let neu = document.createElement('p');
+                neu.innerHTML = 'Ich bin neu hier.';
+                ausgabe.append(neu);
+            }
+
+
+            let btn = document.createElement('button');
+            btn.innerHTML = 'Neues Element anlegen';
+            btn.addEventListener('click', create);
+            ausgabe.append(btn);
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div id="ausgabe"></div>
+
+</body>
+
+</html>

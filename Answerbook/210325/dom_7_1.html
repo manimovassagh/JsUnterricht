@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        body {
+            position: relative;
+            font-size: 20px;
+        }
+    </style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // DOM-Elemente
+            const meinFormular = document.querySelector('#meinFormular');
+            const eingabefelder = Array.from(document.querySelectorAll('input[type="text"]'));
+            const btnSend = document.querySelector('#btnSend');
+
+            // FUNKTIONEN
+            const senden = evt => {
+                evt.preventDefault();
+                console.log(meineEingabe.value);
+            }
+            const setFocus = evt => {
+                evt.target.value = '';
+                evt.target.focus();
+            }
+
+            // EVENTLISTENER
+            btnSend.addEventListener('click', senden);
+            for (let eingabe of eingabefelder) {
+                eingabe.addEventListener('click', setFocus);
+            }
+        });
+
+    </script>
+</head>
+
+<body>
+    <main>
+        <form id="meinFormular">
+            <input type="text" name="meineEingabe1" placeholder="Bitte machen Sie eine Eingabe" />
+            <input type="text" name="meineEingabe2" placeholder="Bitte machen Sie eine Eingabe" />
+            <input type="text" name="meineEingabe3" placeholder="Bitte machen Sie eine Eingabe" />
+            <br />
+            <!-- type="button" sorgt dafür, dass die Seite icht neu geladen wird, da der Button nicht als Submit-Element benutzt wird -->
+            <!--<button id="btnSend" type="button">Senden</button>-->
+            <button id="btnSend">Senden</button>
+        </form>
+
+    </main>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        /*
+        Ermittle, wieviele der Elemente kleiner sind als 20. 
+        */
+
+        let data = [];
+        let anzahl = 100;
+        let schwellenwert = 20;
+        let anzahlKleiner20 = 0;
+
+        // Array erzeugen
+        for (let i = 0; i < anzahl; i++) {
+            data.push(~~(Math.random() * (50 + 1)));
+        }
+
+        // Kleiner als 20
+        for (let i of data) {
+            if (i < schwellenwert) {
+                anzahlKleiner20++;
+            }
+        }
+        console.log(anzahlKleiner20);
+        
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

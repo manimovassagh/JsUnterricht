@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        /* Gute, einfache Lösung
+        let eingabe1 = prompt('Die erste Zahl?');
+        let eingabe2 = prompt('Die zweite Zahl?');
+
+        const multiply = (zahl1, zahl2) => {
+            return zahl1 * zahl2;
+        }
+
+        let erg = multiply(eingabe1, eingabe2);
+        alert(erg);
+        */
+
+        /* Kompakter
+        const multiply = (zahl1, zahl2) => zahl1 * zahl2;
+
+        alert(multiply(
+            prompt('Die erste Zahl?'),
+            prompt('Die zweite Zahl?')
+        ));
+        // alert ( multiply(prompt('Die erste Zahl?'), prompt('Die zweite Zahl?')));
+        // alert ( multiply(23, prompt('Die zweite Zahl?')));
+        // alert ( multiply(23, 32));
+        // alert ( 736 );
+        // Ausgabe;
+        */
+
+        // Kompakter
+        const multiply = (zahl1, zahl2) => zahl1 + zahl2;
+
+        alert(multiply(
+            Number(prompt('Die erste Zahl?')),
+            Number(prompt('Die zweite Zahl?'))
+        ));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

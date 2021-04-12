@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        /*
+        Lege ein Array mit 100 Stellen an und fülle jede Speicherstelle mit einer zufälligen ganzen Zahl zwischen 0 und 50.
+        Lass den gesamten Inhalt ausgeben.
+        */
+
+        let data = [];
+        let anzahl = 100;
+
+        // Alternative 1: Standard
+        for (let i = 0; i < anzahl; i++) {
+            data.push(~~(Math.random() * (50 + 1)));
+        }
+
+        /* Alternative 2: Kompakter, verändert aber die Variable Anzahl
+        while(anzahl--){
+            data.push(~~(Math.random() * 50));
+        }
+        */
+
+        console.log(data.join(' '));
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

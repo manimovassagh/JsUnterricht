@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        #ausgabe {
+            border: 1px solid #aaa;
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        'use strict';
+
+        /*
+        Erzeuge ein weiteres DOM-Element mit der ID 'ausgabe', in welches das Element aus der vorigen Aufgabe eingehängt wird.
+        */
+
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            const body = document.body;
+
+            const ausgabe = document.createElement('p');
+            ausgabe.id = 'ausgabe';
+            body.append(ausgabe);
+
+            const neu = document.createElement('div');
+            neu.className = 'inhalt';
+            neu.innerHTML = 'Hallo Welt';
+            ausgabe.append(neu);
+
+
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        /* Einfach
+        let eingabe = Number(prompt('Eingabe'));
+
+        // Celsius to Kelvin
+        const CtoK = c => c + 273.15;
+
+        alert(CtoK(eingabe));
+        */
+
+        /* +c wandelt c in eine Number um
+        let eingabe = prompt('Eingabe');
+
+        const CtoK = c => +c + 273.15;
+
+        alert(CtoK(eingabe));
+        */
+
+        // Mit Überprüfung, ob die Eingabe eine Zahl ist
+        let eingabe = Number(prompt('Eingabe'));
+        while (isNaN(eingabe)) {
+            eingabe = Number(prompt('Das war nix. Nochmal:'));
+        }
+
+        const CtoK = c => c + 273.15;
+
+        alert(CtoK(eingabe));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

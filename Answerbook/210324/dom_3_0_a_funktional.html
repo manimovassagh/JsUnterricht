@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        .container {
+            border: 1px solid #aaa;
+            padding: 10px;
+        }
+    </style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            // VARIABLEN
+            const body = document.body;
+
+            // FUNKTIONEN
+            const create = (inhalt, klasse, typ, eltern) => {
+                const neu = document.createElement(typ);
+                neu.className = klasse;
+                neu.innerHTML = inhalt;
+                eltern.append(neu);
+                return neu;
+            }
+
+            let container = create('', 'container', 'div', body);
+            create('Hallo Welt', 'inhalt', 'div', container);
+            create('Noch ein Element', 'inhalt', 'div', container);
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

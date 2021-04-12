@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        /*
+        Erzeuge ein Array, welches die Zahlen von 0 bis 100 enthält.
+        Lege eine Funktion an, die dieses Array durchmischt.
+        */
+
+        let zahlen = [];
+        let anzahl = 100;
+
+        for (let i = 0; i <= anzahl; i++) {
+            zahlen.push(i);
+        }
+
+        const mischen = data => {
+            
+            // Leeres Array, das die zufälligen Indizes des Ursprungsarrays bekommt
+            let gemischt = [];
+
+            while (data.length > 0) {
+                let zufall = ~~(Math.random() * data.length);
+                gemischt.push( data[zufall] );
+                data.splice(zufall,1);
+            }
+
+            return gemischt;
+        }
+
+        zahlen = mischen(zahlen);
+        console.log(zahlen.join(' '));
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

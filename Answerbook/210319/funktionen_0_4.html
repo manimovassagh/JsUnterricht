@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        /*
+        let eingabe = prompt('Ihre Eingabe?');
+
+        const isTeilbar3 = zahl => {
+            let mod = zahl % 3;
+            return (mod == 0)
+        }
+
+        alert(isTeilbar3(eingabe));
+        */
+
+        /* Kompakter
+        let eingabe = prompt('Ihre Eingabe?');
+
+        const isTeilbar3 = zahl => (zahl % 3 == 0);
+
+        alert(isTeilbar3(eingabe));
+        */
+
+        /* Ausgabe informativer
+        let eingabe = prompt('Ihre Eingabe?');
+
+        const isTeilbar3 = zahl => (zahl % 3 == 0);
+
+        if (isTeilbar3(eingabe)) {
+            alert(`${eingabe} ist durch 3 teilbar`);
+        } else {
+            alert(`${eingabe} ist nicht durch 3 teilbar`);
+        }
+        */
+
+        /* Ausgabe informativer
+        let eingabe = prompt('Ihre Eingabe?');
+
+        const isTeilbar3 = zahl => (zahl % 3 == 0);
+
+        let ausgabe = `${eingabe} ist `;
+        if (!isTeilbar3(eingabe)) {
+            ausgabe += 'nicht ';
+        }
+        ausgabe += 'durch 3 teilbar';
+        alert(ausgabe);
+        */
+
+        // Ausgabe informativer
+        let eingabe = prompt('Ihre Eingabe?');
+        let isTeilbar = '';
+
+        const checkTeilbar3 = zahl => (zahl % 3 == 0);
+
+        if (!checkTeilbar3(eingabe)) {
+            isTeilbar = 'nicht ';
+        }
+        alert(`${eingabe} ist ${isTeilbar}durch 3 teilbar.`);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

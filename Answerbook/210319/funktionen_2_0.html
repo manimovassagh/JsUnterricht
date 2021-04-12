@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let eingabe = Number(prompt('Welche Zahl soll geprüft werden?'));
+
+        /*
+        const checkPrime = zahl => {
+            for ( let i = 2; i < zahl; i++){
+                if ( zahl % i == 0){
+                    // Falls ein Teiler gefunden wurde, bricht das Return die Überprüfung
+                    // ab und liefert das false zurück
+                    return false;
+                }
+            }
+            // Dieses Return wird nur ausgeführt, wenn in der Schleife die 
+            // if-Anweisung kein einziges Mal ausgeführt wurde.
+            return true;
+        }
+        */
+
+        // Schneller durch die Wurzel
+        const checkPrime = zahl => {
+            for ( let i = 2; i <= Math.sqrt(zahl); i++){
+                if ( zahl % i == 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+        if (checkPrime(eingabe)) {
+            alert ( `${eingabe} ist eine Primzahl.`)
+        } else {
+            alert ( `${eingabe} ist keine Primzahl.`)
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

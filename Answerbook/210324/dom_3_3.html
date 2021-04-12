@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        #ausgabe, #content {
+            border: 1px solid #aaa;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <script>
+        'use strict';
+
+        /*
+        Entferne das Element mit der ID 'ausgabe'
+        */
+
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            const body = document.body;
+
+            // Ausgabe-Container
+            const ausgabe = document.createElement('div');
+            ausgabe.id = 'ausgabe';
+            body.append(ausgabe);
+
+            // Inhalte
+            const neu = document.createElement('p');
+            neu.className = 'inhalt';
+            neu.innerHTML = 'Hallo Welt';
+            ausgabe.append(neu);
+
+            const link = document.createElement('a');
+            link.href="http://www.google.de";
+            link.innerHTML = 'Google';
+            neu.append(link);
+
+            const neu2 = document.createElement('p');
+            neu2.className = 'inhalt';
+            neu2.innerHTML = 'Mehr Inhalt';
+            ausgabe.append(neu2);
+
+            // Content-Container
+            const content = document.createElement('div');
+            content.id = 'content';
+            body.append(content);
+
+            // Verschieben
+            let kinder = Array.from(ausgabe.children);
+            // console.log(kinder);
+            for( let kind of kinder){
+                content.append(kind);
+            }
+
+            // Entfernen
+            ausgabe.remove();
+            // Falls removeChild verwendet werden muss (z.B. IE)
+            // ausgabe.parentNode.removeChild(ausgabe);
+            
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

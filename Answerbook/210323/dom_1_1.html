@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        .highlight {
+            background-color: rgb(241, 241, 204);
+        }
+
+        .rahmen {
+            border: 1px solid rgb(114, 23, 23);
+        }
+    </style>
+
+    <script>
+        'use strict';
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            let alles = Array.from(document.querySelectorAll('p'));
+
+            // Textdaten
+            let subjekte = ['Jutta', 'Harald', 'Schmalschuh', 'Winnitou', 'Martha', 'Jürgen'];
+            let praedikate = ['mag', 'isst', 'ruft', 'trinkt', 'nimmt'];
+            let objekte = ['einen Schuh', 'den Drachen', 'jedes Haus', 'irgendwas'];
+
+            const zufallErzeugen = (min, max) => ~~(Math.random() * (max - min + 1) + min);
+
+            // Funktionen zum Picken eines Elementes
+            const getSubjekt = () => subjekte[ zufallErzeugen(0, subjekte.length - 1) ];
+            // const getSubjekt = () => subjekte[ zufallErzeugen(0, subjekte.length - 1) ];
+            // const getSubjekt = () => subjekte[ zufallErzeugen(0, 6 - 1) ];
+            // const getSubjekt = () => subjekte[ zufallErzeugen(0, 5) ];
+            // const getSubjekt = () => subjekte[ 2 ];
+            // const getSubjekt = () => 'Schmalschuh';
+            const getPraedikat = () => praedikate[zufallErzeugen(0, praedikate.length - 1)];
+            const getObjekt = () => objekte[zufallErzeugen(0, objekte.length - 1)];
+
+            const generiereText = () => `${getSubjekt()} ${getPraedikat()} ${getObjekt()}.`;
+
+            for (let el of alles) {
+                el.innerText = generiereText();
+                el.addEventListener('click', () => {
+                    el.innerText = generiereText();
+                })
+
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <h1>
+        Meine Webseite
+    </h1>
+    <div class="inhalt">
+        <p class="hallo">
+            Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt.
+        </p>
+        <p class="welt">
+            Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+        </p>
+        <p class="hallo">
+            Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich.
+        </p>
+        <p class="mond">
+            Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim.
+        </p>
+    </div>
+</body>
+
+</html>

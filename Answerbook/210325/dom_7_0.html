@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        body {
+            position: relative;
+            font-size: 20px;
+        }
+    </style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", () => {
+
+            // DOM-Elemente
+            const meinFormular = document.querySelector('#meinFormular');
+            const meineEingabe = document.querySelector('#meineEingabe');
+            const btnSend = document.querySelector('#btnSend');
+
+            // FUNKTIONEN
+            const senden = evt => {
+                evt.preventDefault();
+                console.log(meineEingabe.value);
+            }
+
+            // EVENTLISTENER
+            btnSend.addEventListener('click', senden);
+        });
+
+    </script>
+</head>
+
+<body>
+    <main>
+        <form id="meinFormular">
+            <input type="text" id="meineEingabe" name="meineEingabe" placeholder="Bitte machen Sie eine Eingabe" />
+            <!-- type="button" sorgt dafür, dass die Seite icht neu geladen wird, da der Button nicht als Submit-Element benutzt wird -->
+            <!--<button id="btnSend" type="button">Senden</button>-->
+            <button id="btnSend">Senden</button>
+        </form>
+
+    </main>
+
+</body>
+
+</html>

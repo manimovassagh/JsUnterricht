@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        // Funktion, um das ständige Schreiben einer Zählschleife zu sparen
+        // Diese Funktion kann nur einen Parameter übergeben
+        const times = (f, count, p1) => {
+            for ( let i = 0; i < count; i++){
+                f(p1);
+            }
+        }
+
+        /* Klassische Funktion
+        function ausgeben(inhalt) {
+            console.log(inhalt);
+        }
+        */
+
+        /* Arrow-Funktion
+        const ausgeben = inhalt => {
+            console.log(inhalt);            
+        }
+        */
+
+        // Kurzsyntax. Aber nur, wenn die Funktion aus nur einem Befehl besteht.
+        const ausgeben = inhalt => console.log(inhalt);
+
+        // Aufruf der Schleifen-Funktion
+        times(ausgeben, 5, 'Der Text');
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

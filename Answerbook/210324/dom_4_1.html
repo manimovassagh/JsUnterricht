@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        #ausgabe,
+        #content {
+            border: 1px solid #aaa;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .zahl {
+            background: rgb(240, 240, 240);
+            padding: 3px;
+            margin: 2px;
+            border: 1px solid hsla(0,0%,0%,.3);
+        }
+        .rot {
+            background: rgb(105, 17, 17);
+            color: #fff;
+        }
+    </style>
+
+    <script>
+        'use strict';
+
+        /*
+        Gib allen p-Tags, deren Inhalt größer ist als 50, die Klasse 'rot'.
+        */
+
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            let anzahl = 20;
+            const body = document.body;
+
+            // Erzeugen einer zufälligen Zahl
+            const erzeugeZahl = (min, max) => ~~(Math.random() * (max - min + 1) + min);
+
+            let zahlen = [];
+            for (let i = 0; i < anzahl; i++) {
+                zahlen.push(erzeugeZahl(0, 100));
+            }
+            for (let zahl of zahlen) {
+                let neu = document.createElement('p');
+                neu.innerHTML = zahl;
+                neu.classList.add('zahl');
+                if ( zahl >= 50){
+                    neu.classList.add('rot');
+                }
+                body.append(neu);
+            }
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

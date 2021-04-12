@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        #ausgabe,
+        #content {
+            border: 1px solid #aaa;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <script>
+        'use strict';
+
+        /*
+        Lege ein Array mit 20 zufälligen Zahlen an.
+        Erzeuge für jedes Attribut aus dem Array einen p-Tag.
+        */
+
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            let anzahl = 20;
+            const body = document.body;
+
+            // Erzeugen einer zufälligen Zahl
+            const erzeugeZahl = (min, max) => ~~(Math.random() * (max - min + 1) + min);
+
+            let zahlen = [];
+            for (let i = 0; i < anzahl; i++) {
+                zahlen.push(erzeugeZahl(1, 6));
+            }
+            // console.log(zahlen);
+
+            for (let zahl of zahlen) {
+                let neu = document.createElement('p');
+                neu.innerHTML = zahl;
+                body.append(neu);
+            }
+            /*
+            for (let index in zahlen) {
+                let neu = document.createElement('p');
+                neu.innerHTML = `${index} ${zahlen[index]}`;
+                body.append(neu);
+            }
+            */
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

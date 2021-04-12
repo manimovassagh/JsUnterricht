@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        /*
+        Lege ein Array mit 100 Stellen an und fülle jede Speicherstelle mit einer zufälligen ganzen Zahl zwischen 0 und 50.
+        Lass den gesamten Inhalt ausgeben.
+        */
+
+        /* Ausführlich
+        const erzeugeZufall = (max, min) => {
+            let z = Math.random();
+            z *= max - min + 1
+            z += min;
+            z = Math.floor(z);
+            return z;
+        }
+        */
+
+        // Erzeugen einer zufälligen Zahl
+        const erzeugeZufall = (min, max) => ~~(Math.random() * (max - min + 1) + min);
+
+        const erzeugeArray = (anzahl, min, max) => {
+            let data = [];
+            for (let i = 0; i < anzahl; i++) {
+                data.push(erzeugeZufall(min, max));
+            }
+            return data;
+        }
+
+        let meinArray = erzeugeArray(100, 10, 20);
+        console.log(meinArray.join(' '));
+
+        let anderesArray = erzeugeArray(15, 100,1000);
+        console.log(anderesArray.join(' '));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

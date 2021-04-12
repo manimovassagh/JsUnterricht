@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        /* Klassische Funktion
+        function ausgeben(inhalt) {
+            console.log(inhalt);
+        }
+        */
+
+        /* Arrow-Funktion
+        const ausgeben = inhalt => {
+            console.log(inhalt);            
+        }
+        */
+
+        // Kurzsyntax. Aber nur, wenn die Funktion aus nur einem Befehl besteht.
+        const ausgeben = inhalt => console.log(inhalt);
+
+        for (let i = 0; i < 5; i++) {
+            ausgeben('Das ist mein Text.');
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
