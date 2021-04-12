@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        .highlight {
+            background-color: #ff0;
+            border: 1px solid #a00;
+        }
+
+        .feld {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #888;
+        }
+    </style>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        'use strict';
+
+        const colors = ['red', 'blue',];// 'green', 'pink', 'orange', 'grey', 'yellow'];
+        const erzeugeZahl = (min, max) => ~~(Math.random() * (max - min + 1) + min);
+
+        const erzeugeFarbe = (hue) => `hsl(${hue},100%,50%)`;
+        const erzeugeFarbeHover = (hue) => `hsl(${hue},50%,30%)`;
+
+        $(document).ready(function () {
+
+            // Tabelle erzeugen
+            let table = $('<table></table>')
+            $('#inhalt').append(table);
+
+            for (let i = 0; i < 10; i++) {
+                let tr = $('<tr></tr>');
+                table.append(tr);
+
+                for (let j = 0; j < 10; j++) {
+                    // Variablen, die in einem Scope angelegt werden, bleiben bestehen,
+                    // wenn sie später (z.B. durch einen Event) aufgerufen werden
+                    let hue = erzeugeZahl(0, 360);
+                    let td = $('<td></td>');
+
+                    tr.append(td);
+                    td.addClass('feld');
+
+                    td.css({
+                        'background-color': erzeugeFarbe(hue)
+                    })
+
+                    td.mouseenter(function () {
+                        td.css({ 'background-color': erzeugeFarbeHover(hue) })
+                    })
+
+                    td.mouseleave(function () {
+                        td.css({ 'background-color': erzeugeFarbe(hue) })
+                    })
+                }
+            }
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div id="inhalt">
+
+    </div>
+</body>
+
+</html>

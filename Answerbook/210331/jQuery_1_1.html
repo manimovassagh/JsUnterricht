@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        .highlight {
+            background-color: #ff0;
+            border: 1px solid #a00;
+        }
+    </style>
+    <script src="chance.min.js"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script>
+        'use strict';
+
+        $(document).ready(function () {
+            
+            $('p, h1, h2, h3, h4').click(function(evt){
+                evt.stopPropagation();
+                $(this).html(chance.paragraph({ sentences: 1 }));
+            })
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <h1>
+        Meine Webseite
+    </h1>
+    <h1>
+        Deine Webseite
+    </h1>
+    <div class="inhalt anderes">
+        <p class="hallo">
+            Zwei flinke Boxer jagen die quirlige Eva und ihren Mops durch Sylt.
+        </p>
+        <p class="welt">
+            Franz jagt im komplett verwahrlosten Taxi quer durch Bayern.
+        </p>
+        <p class="hallo">
+            Zwölf Boxkämpfer jagen Viktor quer über den großen Sylter Deich.
+        </p>
+        <p class="mond">
+            Vogel Quax zwickt Johnys Pferd Bim. Sylvia wagt quick den Jux bei Pforzheim.
+        </p>
+    </div>
+</body>
+
+</html>

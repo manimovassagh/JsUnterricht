@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script src="libraries/dom.js"></script>
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            const ausgabe = $('#ausgabe');
+
+            const zeigeDaten = data => {
+                // Darstellen
+                DOMcreate(JSON.stringify(data), 'div', [], ausgabe);
+            }
+            
+            /* Alternative 1: Alte Syntax
+            const verarbeiteDaten = () => {
+                if (xhr.status == 200) {
+                    // console.log(xhr.responseText);
+                    zeigeDaten(JSON.parse(xhr.responseText));
+                } else {
+                    console.log(`Datei konnte nicht geladen werden: Fehler ${xhr.statusText}`);
+                }
+            }
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('get', 'daten/data.json');
+            xhr.addEventListener('load', verarbeiteDaten);
+            xhr.send();
+            */
+
+            // Alternative 2: Moderne Syntax Fetch
+            fetch('daten/data.json').then(
+                // Nutzdaten aus Response-Objekt lesen
+                antwort => antwort.json() 
+            ).then( 
+                // Nutzdaten an Anzeige-Funktion übergeben
+                // data => zeigeDaten(data)
+                // Wenn der Parameter einfach nur an eine Funtion weitergeleitet wird, 
+                // kann genausogut einfach die benannte Funktion hier eingetragen werden
+                zeigeDaten
+            ).catch( 
+                console.log
+            )
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="ausgabe"></div>
+</body>
+
+</html>

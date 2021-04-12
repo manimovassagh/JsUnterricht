@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        .container {
+            position: relative;
+            padding: 10px;
+            border: 1px solid #aaa;
+            background: #ccc;
+            margin: 10px;
+        }
+        .antworten {
+            position: relative;
+            padding: 5px;
+            border: 1px solid #aaa;
+            background: #bbb;
+            margin: 5px;
+        }
+    </style>
+
+    <script src="libraries/dom.js"></script>
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            const ausgabe = $('#ausgabe');
+
+            const zeigeDaten = data => {
+                // Darstellen
+                for (let frage of data.questions) {
+                    console.log(frage);
+                    //inhalt, typ, klasse, eltern
+
+                    // Container für das gesamte Fragen-Objekt
+                    const container = DOMcreate(false, 'div', ['container'], ausgabe);
+
+                    // Frage als Überschrift darstellen
+                    DOMcreate(frage.question, 'h4', [], container);
+
+                    // Liste der Antworten
+                    const antwortenContainer = DOMcreate(false, 'div', ['antworten'], container);
+                    for (let answer of frage.answers) {
+                        DOMcreate(answer.antwort, 'div', ['antwort'], antwortenContainer );
+                    }
+                }
+            }
+
+            // Moderne Syntax Fetch
+            fetch('daten/data.json').then(
+                antwort => antwort.json()
+            ).then(
+                zeigeDaten
+            ).catch(
+                console.log
+            )
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="ausgabe"></div>
+</body>
+
+</html>

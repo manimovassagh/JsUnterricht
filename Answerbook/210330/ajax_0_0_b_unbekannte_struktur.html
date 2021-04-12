@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        div {
+            position: relative;
+            border: 1px solid #aaa;
+            background-color: #ddd;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .object {
+            background-color: rgb(113, 171, 230);
+            border: none;
+        }
+
+        .array {
+            background-color: rgb(105, 107, 143);
+            border: none;
+        }
+    </style>
+
+    <script src="libraries/dom.js"></script>
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            const ausgabe = $('#ausgabe');
+
+            const zeigeDaten = (data, eltern) => {
+                // Darstellen
+                // Wenn die Daten ein Array sind, iterieren und für jedes Kind-Element die Darstellung neu anstoßen
+                if (Array.isArray(data)) {
+                    for (let key in data) {
+                        let container = DOMcreate(key, 'div', ['array'], eltern);
+                        zeigeDaten(data[key], container);
+                    }
+                    // Wenn die Daten ein Objekt sind, iterieren und für jedes Kind-Element die Darstellung neu anstoßen
+                } else if (typeof data == 'object') {
+                    for (let key in data) {
+                        let container = DOMcreate(key, 'div', ['object'], eltern);
+                        zeigeDaten(data[key], container);
+                    }
+                    // Wenn die Daten String, Number oder Boolean sind, die Darstellung anstoßen
+                } else {
+                    DOMcreate(data, 'div', ['primitive'], eltern);
+                }
+            }
+
+            // Moderne Syntax Fetch
+            fetch('daten/data.json').then(
+                antwort => antwort.json()
+            ).then(
+                data => zeigeDaten(data, ausgabe)
+            ).catch(
+                console.log
+            )
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="ausgabe"></div>
+</body>
+
+</html>
