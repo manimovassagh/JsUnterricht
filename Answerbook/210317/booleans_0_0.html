@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+        /*
+        Lege zwei Variablen an und speichere darin zufällige Zahlen.
+        Gib in der Konsole aus, ob Variable1 kleiner ist als Variable2.
+        */
+
+        let zahl1 = ~~(Math.random() * 4);
+        let zahl2 = ~~(Math.random() * 4);
+
+        console.log(zahl1, zahl2);
+
+        /* Alternative 1: Simpel
+        console.log( zahl1 < zahl2 );
+        */
+
+        // Alternative 2: Einfaches if
+        // Prüfungen mit einer geringeren Wahrheits-Wahrscheinlichkeit
+        // sollten in der if-else-Kette später ausgeführt werden
+        if (zahl1 < zahl2) {
+            console.log('zahl1 ist kleiner');
+        } else if (zahl1 > zahl2) {
+            console.log('zahl2 ist kleiner');
+        } else {
+            console.log('Beide Zahlen sind identisch');
+        };
+        
+
+        /* Alternative 3: Ausgabe füllen und am Ende ausgeben
+        let ausgabe;
+        if (zahl1 < zahl2) {
+            ausgabe = 'zahl1 ist kleiner';
+        } else if (zahl1 > zahl2) {
+            ausgabe = 'zahl2 ist kleiner';
+        } else {
+            ausgabe = 'Beide Zahlen sind identisch';
+        };
+        console.log(ausgabe);
+        */
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+        /*
+        Wenn die OK-Taste gedrückt wurde, soll zusätzlich zu oberem geprüft werden, ob mehr als 10 Zeichen eingegeben wurden. Falls ja, soll der Text in der Konsole ausgegeben werden.
+        */
+
+        let eingabe = prompt('Ihre Eingabe:');
+
+        // mit trim() werden Whitespaces vor und hinter dem Inhalt entfernt
+        if (eingabe === null) {
+            let abbrechen = confirm('Wollen Sie wirklich abbrechen?');
+            if (abbrechen) {
+                console.log('Es wurde abgebrochen');
+            } else {
+                eingabe = prompt('Ihre Eingabe:');
+                console.log(eingabe);
+            }
+        } else if (eingabe.trim() === '') {
+            console.log('Es wurde keine Eingabe gemacht');
+        } else {
+            // Alternative 2: Prüfen, ob der String einen Index 10 (das 11te Zeichen) hat
+            if (eingabe[10]) {
+                console.log(eingabe);
+            } else {
+                console.log('Das waren zu wenige Zeichen');
+            }
+
+            /* Alternative 1: Die Länge überprüfen
+            if (eingabe.length > 10) {
+                console.log(eingabe);
+            } else {
+                console.log('Das waren zu wenige Zeichen');
+            }
+            */
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+        /*
+        Wenn die Abbrechen-Taste gedrückt wurde, soll das mit einer entsprechenden Meldung ausgegeben werden.
+        */
+
+        let eingabe = prompt('Ihre Eingabe:');
+
+        // mit trim() werden Whitespaces vor und hinter dem Inhalt entfernt
+        if (eingabe === null) {
+            console.log('Es wurde abgebrochen');
+        } else if (eingabe.trim() === '') {
+            console.log('Es wurde keine Eingabe gemacht');
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

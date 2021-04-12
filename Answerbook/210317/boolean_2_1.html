@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+        /*
+        Wie oben, aber der Benutzer soll die Namen selbst eingeben können.
+        */
+
+        let name1 = prompt('Erster Name?');
+        let name2 = prompt('Zweiter Name?');
+
+        // toLowerCase wandelt den String Kleinbuchstaben um.
+        // Sonst würde die ASCII-Tabelle Großbuchstaben als weiter vorn ausgeben
+        // Der Original-String bleibt unverändert
+        if (name1.toLowerCase() < name2.toLowerCase()) {
+            console.log(name1 + ' steht vor ' + name2);
+            console.log(`${name1} steht vor ${name2}`);
+        } else {
+            console.log(`${name1} steht hinter ${name2}`);
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

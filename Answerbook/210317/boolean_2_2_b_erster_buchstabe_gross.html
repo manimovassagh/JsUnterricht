@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+        /*
+        Lass den Namen ausgeben, der zuerst im Alfabet kommt.
+        */
+
+        let name1 = prompt('Erster Name?');
+
+        // Erster Buchstabe groß
+        // Ersten Buchstaben herauskopieren
+        // let firstChar = name1.substr(0,1);
+        // let firstChar = name1.charAt(0);
+        let firstChar = name1[0];
+
+        // Umwandlung
+        firstChar = firstChar.toUpperCase();
+
+        // Erstes Zeichen in String hinein schreiben
+        name1 = firstChar + name1.substr(1);
+
+        // Wie oben als Einzeiler
+        let name2 = prompt('Zweiter Name?');
+        name2 = name2[0].toUpperCase() + name2.substr(1);
+
+        if (name1.toLowerCase() < name2.toLowerCase()) {
+            console.log(name1);
+        } else {
+            console.log(name2);
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
