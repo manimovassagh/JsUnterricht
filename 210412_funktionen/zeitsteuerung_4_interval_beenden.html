@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        // Default einen boolean false, damit 
+        let timerID = false;
+
+        let meineFunktion = () => console.log(~~(Math.random() * 100));
+
+        // setInterval und setTimeout liefern die ID des Interval zurück
+        let geklickt = () => timerID = setInterval(meineFunktion, 700);
+
+        let beendeInterval = () => {
+            console.log('ID: ', timerID);
+            clearInterval(timerID);
+        }
+
+        document.addEventListener("DOMContentLoaded", evt => {
+            let btn = document.querySelector('#btn');
+            let btnEnd = document.querySelector('#btnEnd');
+
+            btn.addEventListener('click', geklickt);
+            btnEnd.addEventListener('click', beendeInterval);
+        });
+
+    </script>
+</head>
+
+<body>
+    <button id="btn">Starten</button>
+    <button id="btnEnd">Beenden</button>
+</body>
+
+</html>

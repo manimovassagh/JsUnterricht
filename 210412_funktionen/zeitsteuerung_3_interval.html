@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meineFunktion = () => console.log('Hallo Welt');
+
+        let geklickt = () => setInterval(meineFunktion, 2000);
+
+        document.addEventListener("DOMContentLoaded", evt => {
+            let btn = document.querySelector('#btn');
+            btn.addEventListener('click', geklickt);
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <button id="btn" >Klick mich!</butto>
+</body>
+
+</html>

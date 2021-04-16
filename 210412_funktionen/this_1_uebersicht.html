@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        console.log(this);
+
+        /* Klassische Funktion bekommt ihr eigenes this
+        function meineFunktion(){
+            console.log(this);
+        }
+        */
+
+        // Eine Arrow-Funktion hat kein eigenes this
+        const meineFunktion = () => {
+            console.log(this);
+        }
+
+        meineFunktion();
+
+        document.addEventListener("DOMContentLoaded", evt => {
+            const btn = document.querySelector('#btn');
+            // Eventlistener übergeben das this als DOM-Element, das den Event ausgelöst hat.
+            btn.addEventListener('click', meineFunktion);
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <button id="btn">Button</button>
+
+</body>
+
+</html>

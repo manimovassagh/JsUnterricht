@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        // Berechnung der Fläche eines Zimmers
+        const qm = (breite, tiefe) => breite * tiefe;
+
+        let flaeche = qm(5, 6) + qm(2, 3) + qm(6, 4) + qm(1, 2);
+        // qm(5, 6) + qm(2, 3) + qm(6, 4) + qm(1, 2);
+        // 30 + qm(2, 3) + qm(6, 4) + qm(1, 2);
+        // 30 + 6 + qm(6, 4) + qm(1, 2);
+        // 30 + 6 + 24 + qm(1, 2);
+        // 30 + 6 + 24 + 2;
+        // 62;
+
+        // Macht im Beispiel keinen Sinn, geht aber ;)
+        let flaeche2 = qm(qm(2, 3), qm(5, 6));
+        // qm(qm(2, 3), qm(5, 6));
+        // qm(6, qm(5, 6));
+        // qm(6, 30);
+        // 180;
+
+        console.log(flaeche2);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
