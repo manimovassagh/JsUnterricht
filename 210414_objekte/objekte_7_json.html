@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meinAuto = {
+            marke: 'Hyundai',
+            modell: 'i30',
+            baujahr: 2016,
+            leistungKW: 74,
+
+            hupen() {
+                console.log('Mööööp!');
+            },
+
+            get leistungPS() {
+                return Math.round(this.leistungKW / .73)
+            },
+        }
+
+        console.log(meinAuto);
+
+        let autoString = JSON.stringify(meinAuto);
+
+        console.log(autoString);
+
+        let autoObjekt = JSON.parse(autoString);
+
+        console.log(autoObjekt);
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

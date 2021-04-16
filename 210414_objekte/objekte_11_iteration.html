@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            const meinAuto = {
+                marke: 'Hyundai',
+                modell: 'i30',
+                baujahr: 2016,
+                farbe: 'weiß',
+                leistungKW: 74,
+                hupen(){
+                    console.log('Honk!');
+                    
+                }
+            }
+
+            /* For ... in liefert den key, über den auf den Wert zugegriffen werden kann
+            for (let el in meinAuto) {
+                console.log(el, meinAuto[el]);
+            }
+            */
+
+            let autoArray = Object.entries(meinAuto);
+            console.log(autoArray);
+            autoArray
+                .filter(el => typeof el[1] != 'function')
+                .forEach(el => console.log(`${el[0]}: ${el[1]}`));
+
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <main>
+
+    </main>
+</body>
+
+</html>

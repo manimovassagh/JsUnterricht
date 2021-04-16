@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meinAuto = {
+            marke: 'Hyundai',
+            modell: 'i30',
+            baujahr: 2016,
+
+            // alter: function () {
+            // Für moderneren Code kann der Begriff "function" weggelassen werden
+            alter() {
+                return new Date().getFullYear() - this.baujahr;
+            },
+            // Methoden sollten immer direkt mit dem Objekt zu tun haben, dieses verändern oder Daten auslesen
+            // Sowas hier gehört sich nicht:
+            erzeugeZufall(min, max) {
+                return Math.random() * (max - min + 1) + min;
+            }
+        }
+
+        console.log(meinAuto.alter());
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

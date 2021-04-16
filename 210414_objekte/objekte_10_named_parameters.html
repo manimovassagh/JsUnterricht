@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            const main = document.querySelector('main');
+
+            // Problem: Bei vielen Parametern (mehr als zwei) ist es ggf schwierig, die Reihenfolge im Auge zu behalten
+            // Außerdem müssen ggf unnötige Parameter mitgegeben werden, um die Reihenfolge einzuhalten
+            /* 
+            const createDOM = (
+                inhalt='',
+                klassen='',
+                typ='div',
+                eltern=main
+            ) => {
+                let neu = document.createElement(typ);
+                neu.className = klassen;
+                neu.innerHTML = inhalt;
+                eltern.append(neu);
+                return neu;
+            }
+            */
+
+            // Lösung: Destructuring
+            const createDOM = ({
+                inhalt='Standard',
+                klassen='',
+                typ='div',
+                eltern=main                
+            } = {}) => { // Falls kein Parameter übergeben wurde, wird für das Destructuring das leere Objekt benutzt, das als Default eingetragen ist
+                let neu = document.createElement(typ);
+                neu.className = klassen;
+                neu.innerHTML = inhalt;
+                eltern.append(neu);
+                return neu;
+            }
+
+            let container = createDOM({
+                inhalt: 'Hallo Welt'
+            })
+
+            createDOM({
+                eltern:container,
+                inhalt:'Die Sonne scheint',
+            })
+
+            
+            createDOM();
+            
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <main>
+
+    </main>
+</body>
+
+</html>

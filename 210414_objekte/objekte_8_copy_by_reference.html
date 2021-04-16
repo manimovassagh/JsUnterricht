@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meinAuto = {
+            marke: 'Hyundai',
+            modell: 'i30',
+            baujahr: 2016,
+            leistungKW: 74,
+        }
+        // Keine Ausgabe, weil Objekt nicht iterierbar ist
+        // console.log(...meinAuto);
+
+        let anderesAuto = {
+            ...meinAuto,
+            farbe: 'weiß'
+        };
+        meinAuto.leistungKW = 100;
+
+        console.log(anderesAuto);
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

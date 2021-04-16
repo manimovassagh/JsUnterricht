@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meinAuto = {
+            marke: 'Hyundai',
+            modell: 'i30',
+            baujahr: 2016,
+
+            motor: {
+                leistungKW: 74,
+                gelaufen: 42000,
+                treibstoff: 'otto'
+            },
+
+            inspektionen: [
+                {
+                    jahr: 2017,
+                    kosten: 125,
+                    arbeiten: [
+                        {
+                            beschreibung: 'Ölwechsel',
+                            zeit: 1
+                        },
+                        {
+                            beschreibung: 'Kaffee trinken',
+                            zeit: 2.5
+                        }
+                    ]
+                },
+                {
+                    jahr: 2018,
+                    kosten: 417,
+                    arbeiten: [
+                        {
+                            beschreibung: 'Achsen verdengeln',
+                            zeit: 1.87
+                        },
+                        {
+                            beschreibung: 'Ausgangswupptigkeit prüfen',
+                            zeit: 2
+                        },
+                        {
+                            beschreibung: 'Verschlängelung überdraddeln',
+                            zeit: 1
+                        }
+                    ]
+                },
+                {
+                    jahr: 2019,
+                    kosten: 144,
+                    arbeiten: [
+                        {
+                            beschreibung: 'irgendwas wichtiges',
+                            zeit: 7
+                        },
+                        {
+                            beschreibung: 'irgendwas teures',
+                            zeit: 1
+                        },
+                        {
+                            beschreibung: 'Was mit den Bremsen',
+                            zeit: 2.43
+                        }
+                    ]
+                }
+            ]
+        }
+
+        console.log(meinAuto);
+        console.log(meinAuto.baujahr);
+        console.log(meinAuto.inspektionen[1].kosten);
+        console.log(meinAuto.inspektionen[2].arbeiten[0].beschreibung);
+
+        // Wenn das jahr der inspektion bekannt ist
+        console.log(meinAuto.inspektionen.find(insp => insp.jahr == 2019).kosten );
+        
+        // Intermediate ist eine Variable, die nur kurz existert, um Daten aus einer Sammlung heraus zu picken oder eine Sammlung temporär zu erzeugen
+        let pick = meinAuto.inspektionen.find(insp => insp.jahr == 2019);
+        console.log(pick.kosten);
+        
+
+
+
+
+        /* Auch DOM-Elemente sind ganz normale Objekte und lassen sich in der Konsole analysieren
+        document.addEventListener("DOMContentLoaded", evt => {
+            console.log(document.body);
+        });
+        */
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

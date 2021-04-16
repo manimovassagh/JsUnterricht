@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meinAuto = {
+            marke: 'Hyundai',
+            modell: 'i30',
+            baujahr: 2016,
+            leistungKW: 74,
+            get leistungPS() {
+                return Math.round(this.leistungKW / .73)
+            },
+            // Im Setter wird der übergebene Wert umgewandelt und in das ursprüngliche Attribut abgelegt
+            set leistungPS(ps){
+                this.leistungKW = Math.round(ps * .73);
+            }
+        }
+
+        console.log(meinAuto.leistungKW);
+        console.log(meinAuto.leistungPS);
+        
+        meinAuto.leistungPS = 120;
+
+        console.log(meinAuto.leistungKW);
+        console.log(meinAuto.leistungPS);
+        
+        console.log(meinAuto);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

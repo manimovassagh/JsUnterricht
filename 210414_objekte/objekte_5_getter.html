@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meinAuto = {
+            marke: 'Hyundai',
+            modell: 'i30',
+            baujahr: 2016,
+            leistungKW: 74,
+            // durch get verhält sich die Methode wie ein ganz normales Attribut
+            get leistungPS() {
+                return Math.round(this.leistungKW / .73)
+            }
+        }
+
+        console.log(meinAuto.leistungKW);
+        console.log(meinAuto.leistungPS);
+        
+        meinAuto.leistungPS = 120;
+
+        console.log(meinAuto.leistungKW);
+        console.log(meinAuto.leistungPS);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

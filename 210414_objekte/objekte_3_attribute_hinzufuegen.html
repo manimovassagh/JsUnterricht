@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meinAuto = {
+            marke: 'Hyundai',
+            modell: 'i30',
+            baujahr: 2016,
+        }
+
+        console.log(meinAuto);
+
+        meinAuto.farbe = 'weiß';
+
+        // Der Inhalt einer [] wird für ein Objekt ausgeführt und der Rückgabewert wird als Key verwendet
+        for (let i = 0; i < 5; i++) {
+            meinAuto[`attr_${i}`] = ~~(Math.random() * 100);
+        }
+
+        console.log(meinAuto);
+
+        for ( let i = 1; i < 3; i++){
+            console.log(meinAuto[`attr_${i}`]);
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
