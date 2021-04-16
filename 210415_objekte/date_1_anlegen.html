@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let jetzt = new Date();
+
+        // Anzahl der ms seit dem 1.1.1970 in Greenwich
+        console.log(jetzt.getTime());
+
+        console.log(jetzt.getHours());
+        console.log(jetzt.getMinutes());
+        console.log(jetzt.getSeconds());
+        
+        // Tag im Monat
+        console.log(jetzt.getDate());
+        // Wochentag (Sonntag ist 0)
+        console.log(jetzt.getDay());
+
+        console.log(jetzt.getMonth());
+        // Anzahl der Jahre seit 1900
+        console.log(jetzt.getYear());
+        // Vollständige Jahreszahl
+        console.log(jetzt.getFullYear());
+
+        // UTC: Universal Timecode (Uhrzeit in London)
+        console.log(jetzt.getUTCHours());
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        function Auto(marke, modell, leistungKW) {
+            // Assign überträgt alle Attribute des neu erzeugten Objektes in das this
+            Object.assign(this, {marke, modell, leistungKW})
+            this.keyNo = Math.random() * 1e17;
+        }
+
+        let meinAuto = new Auto('Hyundai', 'i30', 74);
+
+        console.log(meinAuto);
+        // console.log(String(meinAuto));
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

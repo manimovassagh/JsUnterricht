@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meinArray = [98, 54, 62, 4, 78, 52, 4];
+
+        Array.prototype.durchschnitt = function(){
+            return this.reduce((a,b) => a+b) / this.length;
+        }
+        
+        // console.log(Array.prototype);
+
+        console.log(meinArray.durchschnitt());
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

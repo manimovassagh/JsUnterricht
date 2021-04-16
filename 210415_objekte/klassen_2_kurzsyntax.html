@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        class Auto {
+            constructor(marke, modell, leistungKW) {
+                Object.assign(this, { marke, modell, leistungKW })
+                this.keyNo = Math.random() * 1e17;
+            }
+            hupen() {
+                alert('HONK');
+            }
+            get leistungPS() {
+                return this.leistungKW / .73;
+            }
+            set leistungPS(wert) {
+                this.leistungKW = wert * .73;
+            }
+        }
+
+        let meinAuto = new Auto('Hyundai', 'i30', 74);
+
+        meinAuto.hupen();
+
+        meinAuto.leistungPS = 120;
+        console.log(meinAuto);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

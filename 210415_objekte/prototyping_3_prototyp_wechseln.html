@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meinAuto = {
+            marke: 'Hyundai',
+            modell: 'i30',
+            leistungKW: 74
+        }
+
+        let meinFahrrad = {
+            marke: 'Oertler',
+            schaltung: '3-7'
+        }
+
+
+        let fahrzeug = Object.create(meinAuto);
+
+        console.log(fahrzeug.marke);
+        console.log(fahrzeug.leistungKW);
+        console.log(fahrzeug.schaltung);
+
+        console.log (' ');
+        console.log(fahrzeug.farbe);
+        meinAuto.farbe = 'weiß';
+        console.log(fahrzeug.farbe);
+        
+        console.log (' ');
+        
+        // Objekt, dessen Protype verändert wird
+        // Neuer Prototype
+        Object.setPrototypeOf(fahrzeug, meinFahrrad);
+
+        console.log(fahrzeug.marke);
+        console.log(fahrzeug.leistungKW);
+        console.log(fahrzeug.schaltung);
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
