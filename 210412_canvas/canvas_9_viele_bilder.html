@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        #meinCanvas {
+            position: relative;
+            display: block;
+            border: 1px solid #aaa;
+
+        }
+
+        #preloader {
+            display: none;
+        }
+    </style>
+
+    <script>
+        'use strict';
+
+        window.addEventListener("load", evt => {
+
+            // VARIABLEN
+            let anzahl = 50;
+            const imgKnopf = document.querySelector('#imgKnopf');
+            const meinCanvas = document.querySelector('#meinCanvas');
+            const ctx = meinCanvas.getContext('2d');
+
+            meinCanvas.width = 800;
+            meinCanvas.height = 500;
+
+            // FUNKTIONEN
+            const zufallErzeugen = (min, max) => ~~(Math.random() * (max - min + 1) + min);
+            const farbeErzeugen = () => `hsl(${zufallErzeugen(0, 360)}, 100%, 50%)`;
+
+            for (let i = 0; i < anzahl; i++) {
+                ctx.drawImage(
+                    imgKnopf,
+                    zufallErzeugen(0,meinCanvas.width) - 50,
+                    zufallErzeugen(0,meinCanvas.height) - 50,
+                )
+            }
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+
+    <canvas id="meinCanvas" width="600" height="600"></canvas>
+    <div id="preloader">
+        <img src="bilder/knopf.png" id="imgKnopf" />
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        #meinCanvas {
+            position: relative;
+            display: block;
+            border: 1px solid #aaa;
+
+            /* Kann das Bild verzerren
+            width: 800px;
+            height: 800px;
+            */
+        }
+    </style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            const meinCanvas = document.querySelector('#meinCanvas');
+            const ctx = meinCanvas.getContext('2d');
+
+            meinCanvas.width = 800;
+            meinCanvas.height = 500;
+
+            /* Standard-Weg: Pfad beginnen -> Punkte definieren -> Pfad zeichnen
+            ctx.beginPath();
+
+            // von links, von oben, Breite, Höhe
+            ctx.rect(20,20,100,100);
+            
+            ctx.fill();
+            */
+
+            ctx.fillRect(20,20,100,100);
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+
+    <canvas id="meinCanvas" width="600" height="600"></canvas>
+    Irgendein Text
+</body>
+
+</html>

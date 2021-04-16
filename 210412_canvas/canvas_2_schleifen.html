@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        #meinCanvas {
+            position: relative;
+            display: block;
+            border: 1px solid #aaa;
+
+        }
+    </style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            // VARIABLEN
+            let anzahl = 500;
+
+            const meinCanvas = document.querySelector('#meinCanvas');
+            const ctx = meinCanvas.getContext('2d');
+
+            meinCanvas.width = 800;
+            meinCanvas.height = 500;
+
+            // FUNKTIONEN
+            const zufallErzeugen = (min, max) => ~~(Math.random() * (max - min + 1) + min);
+
+            for (let i = 0; i < anzahl; i++) {
+                ctx.fillRect(
+                    zufallErzeugen(0, meinCanvas.width),
+                    zufallErzeugen(0, meinCanvas.height),
+                    zufallErzeugen(10, 20),
+                    zufallErzeugen(10, 20),
+                );
+            }
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+
+    <canvas id="meinCanvas" width="600" height="600"></canvas>
+    Irgendein Text
+</body>
+
+</html>

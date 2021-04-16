@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        #meinCanvas {
+            position: relative;
+            display: block;
+            border: 1px solid #aaa;
+
+        }
+    </style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            // VARIABLEN
+            const meinCanvas = document.querySelector('#meinCanvas');
+            const ctx = meinCanvas.getContext('2d');
+
+            meinCanvas.width = 800;
+            meinCanvas.height = 500;
+
+            // FUNKTIONEN
+            const zufallErzeugen = (min, max) => ~~(Math.random() * (max - min + 1) + min);
+            const farbeErzeugen = () => `hsl(${zufallErzeugen(0, 360)}, 100%, 50%)`;
+
+            ctx.beginPath();
+
+            ctx.moveTo(100,100);
+            ctx.lineTo(400,100);
+            ctx.lineTo(400,250);
+            ctx.lineTo(200,250);
+
+            ctx.moveTo(300,200);
+            ctx.lineTo(100,200);
+            ctx.lineTo(100,300);
+            ctx.lineTo(400,600);
+
+            for ( let i = 0; i < 20; i++){
+                ctx.lineTo(
+                    zufallErzeugen(0,meinCanvas.width),
+                    zufallErzeugen(0,meinCanvas.height),
+                );
+            }
+
+            ctx.stroke();
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+
+    <canvas id="meinCanvas" width="600" height="600"></canvas>
+    Irgendein Text
+</body>
+
+</html>

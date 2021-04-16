@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        #meinCanvas {
+            position: relative;
+            display: block;
+            border: 1px solid #aaa;
+
+        }
+
+        #preloader {
+            display: none;
+        }
+    </style>
+
+    <script>
+        'use strict';
+
+        window.addEventListener("load", evt => {
+
+            // VARIABLEN
+            let anzahl = 2000;
+            let knoepfe = [];
+
+            const imgKnopf = document.querySelector('#imgKnopf');
+            const meinCanvas = document.querySelector('#meinCanvas');
+            const ctx = meinCanvas.getContext('2d');
+
+            meinCanvas.width = 800;
+            meinCanvas.height = 500;
+
+            // FUNKTIONEN
+            const zufallErzeugen = (min, max) => ~~(Math.random() * (max - min + 1) + min);
+            const farbeErzeugen = () => `hsl(${zufallErzeugen(0, 360)}, 100%, 50%)`;
+
+            const zeichne = () => {
+                // Canvas leeren
+                ctx.clearRect(0, 0, meinCanvas.width, meinCanvas.height)
+
+                // Knöpfe zeichnen
+                for (let knopf of knoepfe) {
+                    // Koordinatenkreuz verschieben und drehen
+                    ctx.translate(knopf.x, knopf.y);
+                    ctx.rotate(knopf.winkel / 180 * Math.PI);
+                    ctx.scale(knopf.scale, knopf.scale);
+
+                    // Bild an Position(0,0) setzen. 
+                    // -50 verschiebt um die Hälfte der Bildgröße
+                    ctx.drawImage(
+                        imgKnopf,
+                        -50,
+                        -50,
+                    )
+                    // Pro Intervallschritt bewegen
+                    knopf.x += knopf.speedX;
+                    knopf.y += knopf.speedY;
+
+                    // Pro Intervallschritt drehen
+                    knopf.winkel += knopf.speedWinkel;
+
+                    if (knopf.x > meinCanvas.width || knopf.x < 0) knopf.speedX *= -1;
+                    if (knopf.y > meinCanvas.height || knopf.y < 0) knopf.speedY *= -1;
+
+                    // Koordinatenkreuz reset
+                    ctx.setTransform(1, 0, 0, 1, 0, 0);
+                }
+            }
+
+            // CODE
+            for (let i = 0; i < anzahl; i++) {
+                // Knoepfe-Array mit der gewünschen Zahl von Objekten füllen
+                knoepfe.push({
+                    x: zufallErzeugen(0, meinCanvas.width),
+                    y: zufallErzeugen(0, meinCanvas.height),
+                    speedX: zufallErzeugen(-500, 500) / 100,
+                    speedY: zufallErzeugen(-500, 500) / 100,
+                    // Aktueller Winkel
+                    winkel: zufallErzeugen(0, 360),
+                    speedWinkel: zufallErzeugen(-400, 400) / 100,
+                    scale: zufallErzeugen(50, 100) / 100,
+                })
+            }
+
+            setInterval(zeichne, 30);
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+
+    <canvas id="meinCanvas" width="600" height="600"></canvas>
+    <div id="preloader">
+        <img src="bilder/knopf.png" id="imgKnopf" />
+    </div>
+
+</body>
+
+</html>

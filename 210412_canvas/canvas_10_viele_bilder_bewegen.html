@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        #meinCanvas {
+            position: relative;
+            display: block;
+            border: 1px solid #aaa;
+
+        }
+
+        #preloader {
+            display: none;
+        }
+    </style>
+
+    <script>
+        'use strict';
+
+        window.addEventListener("load", evt => {
+
+            // VARIABLEN
+            let anzahl = 50;
+            let knoepfe = [];
+
+            const imgKnopf = document.querySelector('#imgKnopf');
+            const meinCanvas = document.querySelector('#meinCanvas');
+            const ctx = meinCanvas.getContext('2d');
+
+            meinCanvas.width = 800;
+            meinCanvas.height = 500;
+
+            // FUNKTIONEN
+            const zufallErzeugen = (min, max) => ~~(Math.random() * (max - min + 1) + min);
+            const farbeErzeugen = () => `hsl(${zufallErzeugen(0, 360)}, 100%, 50%)`;
+            const zeichne = () => {
+                // Canvas leeren
+                ctx.clearRect(0, 0, meinCanvas.width, meinCanvas.height)
+
+                // Knöpfe zeichnen
+                for (let knopf of knoepfe) {
+                    ctx.drawImage(
+                        imgKnopf,
+                        knopf.x - 50,
+                        knopf.y - 50,
+                    )
+                    knopf.x += knopf.speedX;
+                    knopf.y += knopf.speedY;
+
+                    if ( knopf.x > meinCanvas.width || knopf.x < 0) knopf.speedX *= -1;
+                    if ( knopf.y > meinCanvas.height || knopf.y < 0) knopf.speedY *= -1;
+                }
+            }
+
+            // CODE
+            for (let i = 0; i < anzahl; i++) {
+                // Knoepfe-Array mit der gewünschen Zahl von Objekten füllen
+                knoepfe.push({
+                    x: zufallErzeugen(0, meinCanvas.width),
+                    y: zufallErzeugen(0, meinCanvas.height),
+                    speedX: zufallErzeugen(-500, 500) / 100,
+                    speedY: zufallErzeugen(-500, 500) / 100,
+                })
+            }
+
+            setInterval(zeichne, 30);
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+
+    <canvas id="meinCanvas" width="600" height="600"></canvas>
+    <div id="preloader">
+        <img src="bilder/knopf.png" id="imgKnopf" />
+    </div>
+
+</body>
+
+</html>
