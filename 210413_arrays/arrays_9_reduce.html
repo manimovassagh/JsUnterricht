@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meinArray = [51, 85, 32, 41, 6];
+
+        /* alle Parameter
+        let summe = meinArray.reduce((el1, el2, index, a) => {
+            console.log(el1, el2, index, a);
+            return el1 + el2;
+        })
+        */
+
+        // sum enthält beim ersten Aufruf das erste Element des Arrays.
+        // sum enthält beim weiteren Aufrufen den Rückgabewert der vorigen Funktionsausführung
+        let summe = meinArray.reduce((sum, el, i) => {
+            console.log(sum, el, i);
+            return sum + el;
+        });
+        console.log(summe);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

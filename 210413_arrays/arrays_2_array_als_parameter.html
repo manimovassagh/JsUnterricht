@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        const meineFunktion = data => {
+            data.push(1, 2, 3);
+            console.log('inner', data);
+        }
+
+        let einArray = [21, 54, 87, 98, 65, 32];
+        console.log('outer', einArray);
+
+        meineFunktion(einArray);
+        // Echte Kopie übergeben
+        // meineFunktion([...einArray]);
+
+        console.log('outer', einArray);
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+        let meinArray = [51, 85, 32, 41, 6];
+
+        /* wenn man einen bestimmten Wert sucht ...
+        console.log( meinArray.includes(41));
+        */
+
+        console.log(
+            meinArray.some(el => el > 80)   // -> true
+        );
+        console.log(
+            meinArray.every(el => el < 80)   // -> false
+        );
+
+
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

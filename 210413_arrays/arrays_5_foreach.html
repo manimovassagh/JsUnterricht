@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meinArray = [51, 94, 86, 12, 6];
+        /*
+        meinArray.forEach(el => {
+            console.log(el);
+            // eine Veränderung des Wertes in der forEach-Schleife hat in den Original-Daten keine Wirkung
+            el = 7;
+        });
+        */
+
+        /*
+        meinArray.forEach((el, index) => {
+            console.log(index, el);
+        });
+        */
+
+        meinArray.forEach((el, i, a) => {
+            // a enthält das Array, über das forEach läuft
+            console.log(i, el, a);
+        });
+
+        console.log(meinArray);
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

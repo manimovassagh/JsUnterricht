@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let einArray = [1, 2, 3];
+        let zweitesArray = [1, 2, 3];
+        let drittesArray = einArray;
+        let viertesArray = [...einArray];
+        
+        // Vergleiche von Arrays finden auf Basis der Referenz statt
+        // console.log(einArray == zweitesArray);   // -> false
+        // console.log(einArray == drittesArray);   // -> true
+        console.log(einArray == viertesArray);      // -> false
+
+        // Ein Vergleich auf Basis der Werte kann durch JSON erzwungen werden
+        console.log(JSON.stringify(einArray) == JSON.stringify(zweitesArray));
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

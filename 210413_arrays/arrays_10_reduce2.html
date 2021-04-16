@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            let pTags = [...document.querySelectorAll('main p')];
+
+            let meinCallback = (sum, el, i) => {
+                console.log(sum, el, i);                
+                return sum + Number(el.innerHTML.trim());
+            }
+
+            // Der Initialparameter wird beim ersten Funktionsaufruf als erster Parameter in die Callback-Funktion gegeben
+            let summe = pTags.reduce(meinCallback, 42);
+
+            /* kompakt
+            let summe = pTags.reduce((sum, el) => sum + Number(el.innerHTML.trim()), 0);
+            */
+            console.log(summe);
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <main>
+        <p>85</p>
+        <p>15</p>
+        <p>152</p>
+        <p>324</p>
+        <p>97</p>
+        <p>172</p>
+    </main>
+</body>
+
+</html>

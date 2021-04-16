@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meinArray = [51, 85, 32, 41, 94, 86, 12, 6];
+
+        // Beim Chaining wird genutzt, dass der Rückgabewert ein Array ist und
+        // dessen Methoden direkt zur Verfügung stehen
+        meinArray
+            .filter(el => el % 2 == 0)
+            .map(el => el * 2)
+            .forEach((el, i) => console.log(i, el));
+
+        let neuesArray = meinArray
+            .filter(el => el % 2 == 0)
+            .map(el => el * 2);
+            
+        console.log(neuesArray);
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
