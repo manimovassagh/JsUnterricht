@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            // VARIABLEN
+            let btn = document.querySelector('#btn');
+
+            // PROMISES
+            const meinPromise = new Promise(resolve => {
+                let zufall = ~~(Math.random() * 100);
+
+                setTimeout(() => {
+                    resolve(zufall);
+                }, 3000);
+            })
+
+            // CALLBACKs
+            // Sobald das resolve im Promise aufgerufen wurde, wird das then gecallt
+            meinPromise.then(
+                data => console.log(data)
+            )
+
+            // EVENTLISTENER
+            btn.addEventListener('click', () => {
+                // Falls der Promise schon ein Ergebnis hat, wird das then sofort aufgerufen.
+                // Sonst wartet das then, bis ein Ergebnis vorliegt
+                meinPromise.then(
+                    data => {
+                        console.log('On click: ', data);                        
+                    }
+                )
+
+            })
+        });
+
+    </script>
+</head>
+
+<body>
+    <button id="btn">Klick</button>
+</body>
+
+</html>

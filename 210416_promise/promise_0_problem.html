@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        // Pyramid of death
+        setTimeout(() => {
+            console.log('Erste Funktion');
+            setTimeout(() => {
+                console.log('zweite Funktion');
+                setTimeout(() => {
+                    console.log('Dritte Funktion');
+                    setTimeout(() => {
+                        console.log('Vierte Funktion');
+                        setTimeout(() => {
+                            console.log('Fünfte Funktion');
+                        }, 1000)
+                    }, 1000)
+                }, 1000)
+            }, 1000)
+        }, 1000)
+
+        setTimeout(() => {
+            console.log('Fünfte Funktion');
+        }, 1000)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            // VARIABLEN
+            let btn = document.querySelector('#btn');
+
+            // PROMISES
+            // der reject-Parameter ist gedacht für den Fall, dass die Operation nicht gelingt
+            const meinPromise = new Promise((resolve, reject) => {
+                let zufall = ~~(Math.random() * 100);
+
+                setTimeout(() => {
+                    if (zufall > 50) resolve(zufall);
+                    else reject(zufall);
+                }, 300);
+            })
+
+            // CALLBACKs
+            meinPromise.then(
+                data => {
+                    console.log(data);
+                    // Der Rückgabewert wird zu einem Promise umgewandelt.
+                    // D.h., der return ruft das folgende then automatisch auf
+                    return data * 2;
+                }
+            ).then(
+                data => {
+                    console.log(data);
+                    return data * 2;
+                }
+            ).then(
+                data => {
+                    console.log(data);
+                    return data * 2;
+                }
+            ).then(
+                data => {
+                    console.log(data);
+                }
+            ).catch(
+                err => console.log('error: ', err)
+            )
+        });
+
+    </script>
+</head>
+
+<body>
+    <button id="btn">Klick</button>
+</body>
+
+</html>
