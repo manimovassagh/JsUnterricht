@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        /*
+        const meinSet = new Set();
+
+        meinSet.add('Apfel').add('Birne').add('Ananas');
+        meinSet.add('Maracuja');
+        meinSet.add('Granatapfel');
+
+        meinSet.add('Apfel');
+
+        console.log(meinSet);
+        */
+
+        /* Array aufräumen
+        let meinArray = [3,2,1,2,1,2,3,1,1,2,3,1,2,3,1,2,2,2];
+
+        meinArray = [...new Set(meinArray)];
+
+        console.log(meinArray);
+        */
+
+        let lotto = new Set();
+
+        while (lotto.size < 6) lotto.add(~~(Math.random() * 10));
+        lotto = [...lotto];
+        lotto.sort((a, b) => a - b);
+        console.log(lotto);
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meinArray = [1, 2, 3];
+        let anderesArray = meinArray;
+        //let anderesArray = [...meinArray];
+
+        let meinObjekt = {a:1, b:2};
+        const meineFunktion = () => console.log('Hallo Welt');
+
+        const meineMap = new Map();
+
+        meineMap.set('a', 742);
+        meineMap.set(14, 789);
+        meineMap.set(true, 987);
+        meineMap.set(NaN, 158);
+
+        meineMap.set(meinArray, 1000);
+        meineMap.set(meinObjekt, 2000);
+        meineMap.set(meineFunktion, 3000);
+
+        console.log(meineMap.size);
+        console.log(meineMap.has(anderesArray));
+        
+        meineMap.delete(meinArray);        
+        console.log(meineMap);
+
+        meineMap.clear();
+        console.log(meineMap);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

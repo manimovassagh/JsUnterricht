@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        let meinArray = [1, 2, 3];
+        let meinObjekt = {a:1, b:2};
+        const meineFunktion = () => console.log('Hallo Welt');
+
+        let meineMap = new Map();
+
+        meineMap.set('a', 742);
+        meineMap.set(14, 789);
+        meineMap.set(true, 987);
+        meineMap.set(NaN, 158);
+
+        meineMap.set(meinArray, 1000);
+        meineMap.set(meinObjekt, 2000);
+        meineMap.set(meineFunktion, 3000);
+
+        console.log(
+            meineMap.get(meinArray)
+        );
+        console.log(
+            meineMap.get(meinObjekt)
+        );
+        console.log(
+            meineMap.get(meineFunktion)
+        );
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
