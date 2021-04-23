@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            const btn = document.querySelector('#btn');
+            
+            const meinGenerator = function*(){
+                // yield funktioniert wie return, ohne die Funktion zu beenden
+                // bei yield legt der Generator/Iterator eine Pause ein 
+                yield 15;
+                yield 'Hallo';
+                yield Math.PI;
+                yield ~~(Math.random()*100);
+            }
+
+            const meinIterator = meinGenerator();
+
+
+            btn.addEventListener('click', () => {
+                let next = meinIterator.next();
+                console.log(next.value);
+                
+            })
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <button id="btn">Next</button>
+</body>
+
+</html>

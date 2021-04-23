@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            const btn = document.querySelector('#btn');
+
+            const meinGenerator = function* () {
+                let zahl = 0;
+                while (true) {
+                    yield zahl;
+                    zahl++;
+                }
+            }
+
+            const meinIterator = meinGenerator();
+
+
+            btn.addEventListener('click', () => {
+                let next = meinIterator.next();
+                console.log(next.value);
+
+            })
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <button id="btn">Next</button>
+</body>
+
+</html>

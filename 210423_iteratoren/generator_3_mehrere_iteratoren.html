@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            const btn1 = document.querySelector('#btn1');
+            const btn2 = document.querySelector('#btn2');
+            const btn3 = document.querySelector('#btn3');
+
+            const meinGenerator = function* (counter=0, inkrement=1) {
+                while (true) {
+                    yield counter;
+                    counter += inkrement;
+                }
+            }
+
+            const meinIterator1 = meinGenerator();
+            const meinIterator2 = meinGenerator(100, -1);
+            const meinIterator3 = meinGenerator(Math.PI, 0.1);
+
+
+            btn1.addEventListener('click', () => {
+                let next = meinIterator1.next();
+                console.log(next.value);
+            })
+            btn2.addEventListener('click', () => {
+                let next = meinIterator2.next();
+                console.log(next.value);
+            })
+            btn3.addEventListener('click', () => {
+                let next = meinIterator3.next();
+                console.log(next.value);
+            })
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <button id="btn1">Next</button>
+    <button id="btn2">Next</button>
+    <button id="btn3">Next</button>
+</body>
+
+</html>

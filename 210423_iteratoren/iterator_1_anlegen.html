@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            const btn = document.querySelector('#btn');
+            const data = [87, 65, 21, 54, 98, 32];
+
+            //let dataIterator = data.values();
+            //let dataIterator = data.keys();
+            let dataIterator = data.entries();
+
+            console.log(data);
+
+            btn.addEventListener('click', () => {
+                let next = dataIterator.next();
+                console.log(next.value);
+
+                if (next.done) {
+                    btn.disabled = true;
+                }
+            })
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <button id="btn">Next</button>
+</body>
+
+</html>
