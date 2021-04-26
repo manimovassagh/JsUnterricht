@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style></style>
+
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            let inputZahl = document.querySelector('#inputZahl');
+            let btnIsPrime = document.querySelector('#btnIsPrime');
+            let ausgabe = document.querySelector('#ausgabe');
+
+            const checkPrime = zahl => {
+                for (let i = 2; i < zahl; i++) {
+                    if (!(zahl % i)) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            const checkEingabe = () => {
+                console.log(checkPrime(inputZahl.value));
+
+            }
+
+            btnIsPrime.addEventListener('click', checkEingabe);
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div id="eingabe">
+        <input type="number" id="inputZahl" />
+        <button id="btnIsPrime">Check</button>
+    </div>
+
+    <div id="ausgabe"></div>
+
+</body>
+
+</html>
