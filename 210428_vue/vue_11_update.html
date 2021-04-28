@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        footer {
+            background: #aaa;
+            margin-top: 10px;
+            padding: 10px;
+            color: #fff;
+        }
+        .rot {
+            color: #a00;
+            font-weight: bold;
+        }
+    </style>
+
+    <script src="vue.js"></script>
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            // Eine Direktive ist eine Sammlung von Hooks, welche zu bestimmten Zeitpunkten im Lebenszyklus eines Elementes gestartet werden
+            Vue.directive('addlaenge', {
+                bind: el => {
+                    const ta = el.querySelector('textarea');
+                    const laenge = document.createElement('p');
+
+                    laenge.className = "laenge";
+                    if ( ta.value.length > 144 ) laenge.classList.add('rot');
+                    laenge.innerHTML = ta.value.length;
+                    
+                    el.append(laenge);
+                },
+                update: el => {
+                    const ta = el.querySelector('textarea');
+                    const laenge = el.querySelector('.laenge');
+                    
+                    if ( ta.value.length > 144 ) laenge.classList.add('rot');
+                    else laenge.classList.remove('rot');
+
+                    laenge.innerHTML = ta.value.length;
+                },
+            })
+
+            new Vue({
+                el: '#app',
+                data: {
+                    inhalte: [
+                        {
+                            text: 'Hallo Welt'
+                        }, {
+                            text: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+                        }, {
+                            text: 'Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,'
+                        }
+                    ]
+                }
+            })
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Vue ist cool</h1>
+    </header>
+
+    <main id="app">
+
+        <div v-for="inhalt in inhalte" v-addlaenge>
+            <textarea v-model="inhalt.text"></textarea>
+        </div>
+
+    </main>
+
+    <footer>
+        Legal info
+    </footer>
+</body>
+
+</html>

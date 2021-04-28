@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        footer {
+            background: #aaa;
+            margin-top: 10px;
+            padding: 10px;
+            color: #fff;
+        }
+    </style>
+
+    <script src="vue.js"></script>
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            new Vue({
+                el: '#app',
+                data: {
+                    // in Arrays bitte immer Objekte ablegen
+                    serien: [
+                        { titel: 'The Expanse' },
+                        { titel: 'Dr. Who' },
+                        { titel: 'Timetunnel' },
+                        { titel: 'Battlestar Galactica' },
+                        { titel: 'Picard' },
+                        { titel: 'Dirk Gently' },
+                        { titel: 'The Office' },
+                        { titel: 'I am Robot' },
+                    ]
+                },
+                methods: {
+                }
+            })
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Vue ist cool</h1>
+    </header>
+
+    <main id="app">
+
+        <div v-for="(serie, index) in serien">
+            {{ index + 1 }}: {{ serie.titel }}
+        </div>
+
+    </main>
+
+    <footer>
+        Legal info
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        footer {
+            background: #aaa;
+            margin-top: 10px;
+            padding: 10px;
+            color: #fff;
+        }
+    </style>
+
+    <script src="vue.js"></script>
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            // Eine Direktive ist eine Sammlung von Hooks, welche zu bestimmten Zeitpunkten im Lebenszyklus eines Elementes gestartet werden
+            Vue.directive('addlaenge', {
+                bind: el => {
+                    // console.log(el);
+                    const laenge = document.createElement('p');
+                    laenge.className = "laenge";
+
+                    // console.log(el.innerText.trim());
+
+                    laenge.innerHTML = el.innerText.trim().length;
+                    el.append(laenge);
+                },
+                update: el => {
+
+                },
+            })
+
+            new Vue({
+                el: '#app',
+            })
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Vue ist cool</h1>
+    </header>
+
+    <main id="app">
+        <!-- Direktive beginnen immer mit "v-" -->
+        <div v-addlaenge>
+            Hallo Welt
+        </div>
+        <div v-addlaenge>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        </div>
+        <div v-addlaenge>
+            Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed
+            ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt
+            tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros
+            faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed
+            consequat, leo eget bibendum sodales, augue velit cursus nunc,
+        </div>
+    </main>
+
+    <footer>
+        Legal info
+    </footer>
+</body>
+
+</html>

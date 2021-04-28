@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        footer {
+            background: #aaa;
+            margin-top: 10px;
+            padding: 10px;
+            color: #fff;
+        }
+    </style>
+
+    <script src="vue.js"></script>
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            new Vue({
+                el: '#app',
+                data: {
+                    counter: 0
+                },
+                methods:{
+                    inkrement(){
+                        this.counter++;
+                    }
+                }
+            })
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Vue ist cool</h1>
+    </header>
+
+    <main id="app">
+
+        <!--<button v-on:click="inkrement">-->
+        <button @click="inkrement">
+            Klick mich: {{ counter }}
+        </button>
+
+        <h3>
+            {{ counter }}
+        </h3>
+
+    </main>
+
+    <footer>
+        Legal info
+    </footer>
+</body>
+
+</html>

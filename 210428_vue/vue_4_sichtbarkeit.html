@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Titel</title>
+    <style>
+        footer {
+            background: #aaa;
+            margin-top: 10px;
+            padding: 10px;
+            color: #fff;
+        }
+    </style>
+
+    <script src="vue.js"></script>
+    <script>
+        'use strict';
+
+        document.addEventListener("DOMContentLoaded", evt => {
+
+            new Vue({
+                el: '#app',
+                data: {
+                    x: 34,
+                    y: 74
+                }
+            })
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Vue ist cool</h1>
+    </header>
+
+    <main id="app">
+        <input type="text" v-model="x" />
+        <input type="text" v-model="y" />
+
+        <p v-if="!(x && y)">
+            Bitte füllen Sie alle Felder aus
+        </p>
+        <p v-else-if="isNaN(x) || isNaN(y)">
+            So kann ich nicht arbeiten.
+        </p>
+        <p v-else>
+            {{ x * y }}
+        </p>
+
+    </main>
+
+    <footer>
+        Legal info
+    </footer>
+</body>
+
+</html>
